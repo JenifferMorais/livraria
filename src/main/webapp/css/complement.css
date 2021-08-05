@@ -1,22 +1,23 @@
 .menu-container{
 	position: relative;	
+	
 }
 .menu-body{
 	position: absolute;
 	display: none;
-	
-
 }
 .menu-container:hover .menu-body, .menu-body:hover{
 	display:block;
+	
 }
 .menu-body> div{
 	padding: 8px 20px;
-	background: #efefef;
+	background: #ffffff;
 	color: #121212;
 	width: 100%;
 }
 
-.menu-body> div ul{
+.menu-body> div ul{	
 	list-style: none;
 }
+

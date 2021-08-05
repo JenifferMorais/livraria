@@ -160,7 +160,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("/projetoweb/usuario");
+		response.sendRedirect("/projetoweb/usuario/logar");
 	}
 
 }
