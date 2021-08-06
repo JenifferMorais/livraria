@@ -143,26 +143,20 @@ public class LivroController extends ProjectHttpServlet {
 		final LivroDAO livroDAO = new LivroDAO(connection);
 		final Livro livro = new Livro();
 
-		int idUsuario = Sessao.getUsuarioId(request);
-		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+		livro.setNome(request.getParameter("nome"));
+		livro.setAutor(request.getParameter("autor"));
+		livro.setDescricao(request.getParameter("descricao"));
+		livro.setValor(Double.parseDouble(request.getParameter("valor")));
+		livro.setISBN(request.getParameter("isbn"));
+		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 
-		if (usuarioDAO.isAdmin(idUsuario)) {
-
-			livro.setNome(request.getParameter("nome"));
-			livro.setAutor(request.getParameter("autor"));
-			livro.setDescricao(request.getParameter("descricao"));
-			livro.setValor(Double.parseDouble(request.getParameter("valor")));
-			livro.setISBN(request.getParameter("isbn"));
-			livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
-
-			try {
-				livroDAO.inserirLivro(livro);
-				request.removeAttribute("connection");
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-
+		try {
+			livroDAO.inserirLivro(livro);
+			request.removeAttribute("connection");
+		} catch (SQLException e1) {
+			e1.printStackTrace();
 		}
+
 		response.sendRedirect("/projetoweb/livros");
 	}
 
