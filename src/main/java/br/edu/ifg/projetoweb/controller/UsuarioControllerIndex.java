@@ -55,6 +55,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			return;
 
 		}
+		
 		if(splits[1].matches("logoff")) {
 			request.getSession().invalidate();
 			response.sendRedirect("/projetoweb/usuario/logar");

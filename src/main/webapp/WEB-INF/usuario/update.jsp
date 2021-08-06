@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +57,7 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/hritik.jpg" alt="user-img" width="36"
-                                class="img-circle"><b class="hidden-xs">Admin</b> </a>
+                                class="img-circle"><b class="hidden-xs">${usuario.nome}</b> </a>
                     </li>
                 </ul>
             </div>
@@ -76,15 +77,16 @@
                         </div>
                     </li>
                   
-                    <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="ti-layout fa-fw"></i>Basic-Table</a>
-                    </li>
+                    <li><a href="/projetoweb/usuario" class="waves-effect"><i
+							class="ti-layout fa-fw"></i>Gerenciar Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect"><i
+							class="ti-layout fa-fw"></i>Gerenciar Livros</a></li>
                    
                 </ul>
                 <div class="center p-20">
                     <span class="hide-menu"><a href="http://wrappixel.com/templates/myadmin/" target="_blank"
-                            class="btn btn-info btn-block btn-rounded waves-effect waves-light">Upgrade to
-                            Pro</a></span>
+                            class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home
+                     </a></span>
                 </div>
             </div>
             <!-- /.sidebar-collapse -->
@@ -96,10 +98,10 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-12">
-                    <h4 class="page-title">Profile</h4>
+                    <h4 class="page-title">Editar usuário</h4>
                     <ol class="breadcrumb">
                         <li><a href="#">Dashboard</a></li>
-                        <li class="active">Profile Page</li>
+                        <li class="active">Usuário</li>
                     </ol>
                 </div>
                 <!-- /.col-lg-12 -->

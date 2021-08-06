@@ -53,6 +53,12 @@ public class LivroController  extends ProjectHttpServlet {
 			
 		}
 		
+		if (splits[1].matches("home")) {
+
+			Router.home(request, response);
+			return;
+
+		}
 		int id = Integer.parseInt(splits[1]);	
 		try {
 			Livro livro = livroDAO.buscarLivro(id);
@@ -86,7 +92,7 @@ public class LivroController  extends ProjectHttpServlet {
 		}
 
 		request.setAttribute("livros", livros);
-		Router.listarLivros(request, response);
+		response.sendRedirect("/projetoweb/livros");
 
 	}
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)

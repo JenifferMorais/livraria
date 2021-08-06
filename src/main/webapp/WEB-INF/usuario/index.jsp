@@ -64,7 +64,7 @@
 					</li>
 					<li class="menu-container"><a class="profile-pic" href=""> <img
 							src="images/users/hritik.jpg" alt="user-img" width="36"
-							class="img-circle"><b class="hidden-xs">Admin</b>
+							class="img-circle"><b class="hidden-xs">${usuario.nome}</b>
 					</a>
 				<div class="menu-body">	
 				<div><ul>
@@ -97,12 +97,13 @@
 					</li>
 					<li><a href="/projetoweb/usuario" class="waves-effect"><i
 							class="ti-layout fa-fw"></i>Gerenciar Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect"><i
+							class="ti-layout fa-fw"></i>Gerenciar Livros</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
 						href="http://wrappixel.com/templates/myadmin/" target="_blank"
-						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Upgrade
-							to Pro</a></span>
+						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home</a></span>
 				</div>
 			</div>
 			<!-- /.sidebar-collapse -->
@@ -115,7 +116,7 @@
 						<h4 class="page-title">Gerenciar usuários</h4>
 						<ol class="breadcrumb">
 							<li><a href="#">Dashboard</a></li>
-							<li class="active">Basic Table</li>
+							<li class="active">Usuários</li>
 						</ol>
 					</div>
 					<!-- /.col-lg-12 -->
@@ -149,13 +150,13 @@
 											<td><c:out value="${usuario.email}" /></td>
 											<td><c:out value="${usuario.telefone}" /></td>
 											
-											<td><a href="/projetoweb/usuario/${usuario.id }">
+											<td><a  class="btn btn-success" href="/projetoweb/usuario/${usuario.id }">
 													Editar</a></td>
 													
 											<td>
 											<form action="/projetoweb/usuario" method="POST">
 											<input type="hidden" name="_method" value="DELETE"><input
-												type="hidden" name="id" value="${usuario.id}" /> <input
+												type="hidden" name="id" value="${usuario.id}" /> <input class="btn btn-success"
 												value="Excluir" type="submit" /> </form> </td> 
 										</tr>
 									</c:forEach>

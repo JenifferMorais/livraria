@@ -75,6 +75,7 @@ public class LivroDAO {
 			statement.setInt(6, livro.getId());
 			statement.executeUpdate();
 			statement.close();
+			
 			System.out.println("Sucesso!");
         } catch (SQLException e) {
 			e.printStackTrace();
@@ -143,17 +144,20 @@ public class LivroDAO {
 		
 
 		try {
-			sql = "SELECT id, nome, autor, isbn FROM livros ORDER BY nome ASC";
+			
+			sql = " SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id ORDER BY nome ASC;";
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery();
 
 			while (resultSet.next()) {
 				Livro livro = new Livro();
-				livro.setId(resultSet.getInt(1));
-				livro.setNome(resultSet.getString(2));
-				livro.setAutor(resultSet.getString(3));
-				livro.setISBN(resultSet.getString(4));
-				
+				livro.setISBN(resultSet.getString(1));
+				livro.setId(resultSet.getInt(2));
+				livro.setNome(resultSet.getString(3));
+				livro.setAutor(resultSet.getString(4));
+				livro.setValor(resultSet.getDouble(5));
+				livro.setDescricao(resultSet.getString(6));
+				livro.setQuantidade(resultSet.getInt(7));
 				listaLivros.add(livro);
 			}
 			statement.close();
