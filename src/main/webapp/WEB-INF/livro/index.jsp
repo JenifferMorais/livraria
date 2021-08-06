@@ -22,7 +22,7 @@
 	href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css"
 	rel="stylesheet">
 
-<link href="/projetoweb/css/style.css" rel="stylesheet">
+<link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
