@@ -11,12 +11,12 @@ import javax.servlet.annotation.WebServlet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.edu.ifg.projetoweb.DAO.UsuarioDAO;
 import br.edu.ifg.projetoweb.core.ProjectHttpServlet;
 import br.edu.ifg.projetoweb.model.Usuario;
 import br.edu.ifg.projetoweb.utils.Hashing;
+import br.edu.ifg.projetoweb.utils.Sessao;
 
 @WebServlet(name = "ListarUsuario", urlPatterns = { "/usuario/*" })
 public class UsuarioControllerIndex extends ProjectHttpServlet {
@@ -28,17 +28,19 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			throws ServletException, IOException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+		int	idUsuario = Sessao.getUsuarioId(request);
 
 		String pathInfo = request.getPathInfo();
 
 		if (pathInfo == null || pathInfo.equals("/")) {
-
+			if (usuarioDAO.isAdmin(idUsuario)) {
 			try {
 				usuarios = usuarioDAO.listarUsuario();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			request.setAttribute("usuarios", usuarios);
+			}
 			Router.listar(request, response);
 			return;
 		}
@@ -62,9 +64,11 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			return;
 		}
 		
-
-		HttpSession sessao = request.getSession();
-		Integer idUsuario = (Integer) sessao.getAttribute("usuarioid");
+		String nomeUsuario = Sessao.getUsuarioNome(request);
+		request.setAttribute("nomeUsuario", nomeUsuario);
+		
+	   
+		
 		int id = Integer.parseInt(splits[1]);
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
@@ -88,8 +92,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		List<Usuario> usuarios = null;
 
-		HttpSession sessao = request.getSession();
-		Integer idUsuario = (Integer) sessao.getAttribute("usuarioid");
+		int	idUsuario = Sessao.getUsuarioId(request);
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 

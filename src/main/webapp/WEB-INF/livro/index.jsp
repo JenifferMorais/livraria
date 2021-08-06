@@ -64,7 +64,7 @@
 					</li>
 					<li class="menu-container"><a class="profile-pic" href=""> <img
 							src="images/users/hritik.jpg" alt="user-img" width="36"
-							class="img-circle"><b class="hidden-xs">Admin</b>
+							class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b>
 					</a>
 				<div class="menu-body">	
 				<div><ul>

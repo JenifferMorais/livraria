@@ -9,11 +9,12 @@ import javax.servlet.http.Cookie;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import br.edu.ifg.projetoweb.DAO.UsuarioDAO;
 import br.edu.ifg.projetoweb.core.ProjectHttpServlet;
 import br.edu.ifg.projetoweb.model.Usuario;
+import br.edu.ifg.projetoweb.utils.Sessao;
 
 
 @WebServlet(name = "loginUsuario", urlPatterns = { "/usuario/logar" })
@@ -34,9 +35,9 @@ public class UsuarioControllerLogin extends ProjectHttpServlet {
 			request.removeAttribute("connection");
 			
 			if (usuario != null) {
-				HttpSession sessao = request.getSession();
-				sessao.setAttribute("usuarioid", usuario.getId());
+				Sessao.configure(request, usuario.getId(), usuario.getNome());
 				
+				;
 				response.addCookie(new Cookie("usuariologado", usuario.getNome()));
 			    response.sendRedirect("/projetoweb/usuario");
 			}else {

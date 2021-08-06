@@ -57,7 +57,7 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/hritik.jpg" alt="user-img" width="36"
-                                class="img-circle"><b class="hidden-xs">Admin</b> </a>
+                                class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
                     </li>
                 </ul>
             </div>
