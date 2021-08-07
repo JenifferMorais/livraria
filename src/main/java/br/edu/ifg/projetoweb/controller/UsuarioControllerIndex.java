@@ -29,20 +29,24 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			throws ServletException, IOException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
-		
+
 		HttpSession sessao = request.getSession();
-		Integer usuarioId = (Integer) sessao.getAttribute("usuarioid");
+		Integer admin = (Integer) sessao.getAttribute("usuarioid");
 		String pathInfo = request.getPathInfo();
 
+		if (admin == null) {
+			admin = 0;
+		}
+
 		if (pathInfo == null || pathInfo.equals("/")) {
-			
-			if(usuarioDAO.isAdmin(usuarioId)) {
-			try {
-				usuarios = usuarioDAO.listarUsuario();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			request.setAttribute("usuarios", usuarios);
+
+			if (usuarioDAO.isAdmin(admin)) {
+				try {
+					usuarios = usuarioDAO.listarUsuario();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				request.setAttribute("usuarios", usuarios);
 			}
 			Router.listar(request, response);
 			return;
@@ -59,17 +63,18 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			return;
 
 		}
-		
-		if(splits[1].matches("logoff")) {
+
+		if (splits[1].matches("logoff")) {
 			request.getSession().invalidate();
 			response.sendRedirect("/projetoweb/usuario/logar");
 			return;
 		}
-		
+
 		String nomeUsuario = Sessao.getUsuarioNome(request);
 		request.setAttribute("nomeUsuario", nomeUsuario);
-		int	idUsuario = Sessao.getUsuarioId(request);
-		
+
+		int idUsuario = Sessao.getUsuarioId(request);
+
 		int id = Integer.parseInt(splits[1]);
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
@@ -93,14 +98,13 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		List<Usuario> usuarios = null;
 
-		int	idUsuario = Sessao.getUsuarioId(request);
+		int idUsuario = Sessao.getUsuarioId(request);
 		int id = Integer.parseInt(request.getParameter("id"));
-		
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
 			usuarioDAO.removerUsuario(id);
 		}
-		
+
 		try {
 			usuarios = usuarioDAO.listarUsuario();
 		} catch (SQLException e) {
