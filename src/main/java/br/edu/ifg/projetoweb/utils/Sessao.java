@@ -22,7 +22,6 @@ public class Sessao {
 		if (idUsuario == null) {
 			return 0;
 		}
-		
 		return idUsuario;
 	}
 

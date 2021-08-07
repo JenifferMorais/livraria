@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import br.edu.ifg.projetoweb.DAO.UsuarioDAO;
 import br.edu.ifg.projetoweb.core.ProjectHttpServlet;
@@ -30,13 +30,9 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
-		HttpSession sessao = request.getSession();
-		Integer admin = (Integer) sessao.getAttribute("usuarioid");
+		Integer admin = Sessao.getUsuarioId(request);
 		String pathInfo = request.getPathInfo();
 
-		if (admin == null) {
-			admin = 0;
-		}
 
 		if (pathInfo == null || pathInfo.equals("/")) {
 
