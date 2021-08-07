@@ -20,8 +20,9 @@ public class Sessao {
 		Integer idUsuario = (Integer) sessao.getAttribute(USUARIO_ID);
 
 		if (idUsuario == null) {
-			idUsuario = 0;
+			return 0;
 		}
+		
 		return idUsuario;
 	}
 

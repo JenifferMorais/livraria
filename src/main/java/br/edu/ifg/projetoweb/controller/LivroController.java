@@ -27,6 +27,7 @@ public class LivroController extends ProjectHttpServlet {
 			throws IOException, ServletException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		LivroDAO livroDAO = new LivroDAO(connection);
+		
 		int idUsuario = Sessao.getUsuarioId(request);
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);

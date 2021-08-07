@@ -74,7 +74,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		request.setAttribute("nomeUsuario", nomeUsuario);
 
 		int idUsuario = Sessao.getUsuarioId(request);
-
+		
 		int id = Integer.parseInt(splits[1]);
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
