@@ -152,7 +152,7 @@
 											<td><c:out value="${livro.autor}" /></td>
 											<td><c:out value="${livro.ISBN}" /></td>
 											<td><c:out value="${livro.quantidade}" /></td>
-											
+											<td></td>
 											
 											<td><a class="btn btn-success" href="/projetoweb/livros/${livro.id }">
 													Editar</a></td>
@@ -160,7 +160,7 @@
 											<td>
 											<form action="/projetoweb/livros" method="POST">
 											<input type="hidden" name="_method" value="DELETE"><input
-												type="hidden" name="id" value="${livro.id}" /> <input class="btn btn-success"
+												type="hidden" name="id" value="${livro.id}" /> <input onclick="return confirm('Tem certeza de que deseja excluir este item?');" class="btn btn-success"
 												value="Excluir" type="submit" /> </form> </td> 
 										</tr>
 									</c:forEach>

@@ -29,6 +29,14 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/users/usuario.png";
+    return true;
+}
+</script>
+	
 </head>
 
 <body>
@@ -108,12 +116,13 @@
             </div>
             <!-- row -->
             <div class="row">
+               <form class="form-horizontal form-material" method ="post" action="/projetoweb/usuario/update">
                 <div class="col-md-4 col-xs-12">
                     <div class="white-box">
                         <div class="user-bg"> <img width="100%" alt="user" src="/projetoweb/images/large/img1.jpg">
                             <div class="overlay-box">
                                 <div class="user-content">
-                                    <a href="javascript:void(0)"><img src="/projetoweb/images/users/genu.jpg"
+                                    <a href="javascript:void(0)"><img src="/projetoweb/images/users/${usuario.imagem}" onerror="imgError(this);"
                                             class="thumb-lg img-circle" alt="img"></a>
                                     <h4 class="text-white">${usuario.nome}</h4>
                                     <h5 class="text-white">${usuario.email}</h5>
@@ -121,36 +130,39 @@
                             </div>
                         </div>
                         <div class="user-btm-box">
-                            
+                            <label class="col-md-12">Imagem</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="imagem" value="${usuario.imagem}" data-ls-module="charCounter" maxlength="100"
+                                        class="form-control form-control-line"> </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 col-xs-12">
                     <div class="white-box">
-                        <form class="form-horizontal form-material" method ="post" action="/projetoweb/usuario/update">
+                     
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
-                                    <input type="text" value="${usuario.nome}" name="nome"
+                                    <input type="text" value="${usuario.nome}" name="nome" data-ls-module="charCounter" maxlength="100"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label for="example-email" class="col-md-12">Email</label>
                                 <div class="col-md-12">
-                                    <input type="email" value="${usuario.email}"
+                                    <input type="email" value="${usuario.email}" data-ls-module="charCounter" maxlength="100"
                                         class="form-control form-control-line" name="email" id="example-email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Password</label>
                                 <div class="col-md-12">
-                                    <input type="password" value="${usuario.password}" name="password" class="form-control form-control-line">
+                                    <input type="password" value="${usuario.password}" name="password" data-ls-module="charCounter" maxlength="100" class="form-control form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Telefone</label>
                                 <div class="col-md-12">
-                                    <input type="text" value="${usuario.telefone}" name="telefone"
+                                    <input type="text" value="${usuario.telefone}" name="telefone" data-ls-module="charCounter" maxlength="11"
                                         class="form-control form-control-line"> </div>
                             </div>
                             
@@ -159,12 +171,13 @@
                                 <div class="col-sm-12">
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="hidden" name="id" value="${usuario.id}" /> 
-                                    <button class="btn btn-success" type="submit">Atualizar</button>
+                                    <button onclick="return confirm('Deseja confirmar as alterações?');" class="btn btn-success" type="submit">Atualizar</button>
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
+                </form>
             </div>
             <!-- /.row -->
         </div>

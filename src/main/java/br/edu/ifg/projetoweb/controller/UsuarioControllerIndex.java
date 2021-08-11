@@ -68,6 +68,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		String nomeUsuario = Sessao.getUsuarioNome(request);
 		request.setAttribute("nomeUsuario", nomeUsuario);
+		
 
 		int idUsuario = Sessao.getUsuarioId(request);
 		
@@ -123,6 +124,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		usuario.setNome(request.getParameter("nome"));
 		usuario.setEmail(request.getParameter("email"));
 		usuario.setTelefone(request.getParameter("telefone"));
+		usuario.setImagem(request.getParameter("imagem"));
 
 		if (usuario.getPassword() != null) {
 			Hashing hashing = new Hashing(11);
@@ -153,6 +155,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		usuario.setNome(request.getParameter("nome"));
 		usuario.setTelefone(request.getParameter("telefone"));
 		usuario.setEmail(request.getParameter("email"));
+		usuario.setImagem(request.getParameter("imagem"));
 		String password = request.getParameter("password");
 
 		Hashing hashing = new Hashing(11);

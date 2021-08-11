@@ -7,7 +7,17 @@ public class Livro {
 	double valor;
 	String ISBN;
 	String descricao;
+	String imagem;
 	transient int quantidade;
+
+	
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 
 	public int getQuantidade() {
 		return quantidade;

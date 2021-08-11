@@ -7,6 +7,17 @@ public class Usuario {
 	String email;
 	String password;
 	boolean admin;
+	String imagem;
+	
+	
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 
 	public int getId() {
 		return id;

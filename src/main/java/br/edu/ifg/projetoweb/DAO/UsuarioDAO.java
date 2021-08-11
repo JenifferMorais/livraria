@@ -28,12 +28,13 @@ public class UsuarioDAO {
 
 		try {
 			connection.setAutoCommit(false);
-			sql = "INSERT INTO usuario (nome, password, telefone, email) VALUES(?,?,?,?)";
+			sql = "INSERT INTO usuario (nome, password, telefone, email, imagem) VALUES(?,?,?,?,?)";
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1, usuario.getNome());
 			statement.setString(2, usuario.getPassword());
 			statement.setString(3, usuario.getTelefone());
 			statement.setString(4, usuario.getEmail());
+			statement.setString(5, usuario.getImagem());
 
 			estadoOperacao = statement.executeUpdate() > 0;
 			if (estadoOperacao == false) {
@@ -62,7 +63,7 @@ public class UsuarioDAO {
 
 		String parameter = usuario.getPassword() != null && usuario.getPassword().trim().length() != 0 ? ",password = ?"
 				: "";
-		String sql = (String.format("UPDATE usuario SET nome = ?, email = ?, telefone = ? %s WHERE id = ?", parameter));
+		String sql = (String.format("UPDATE usuario SET nome = ?, email = ?, telefone = ?, imagem =? %s WHERE id = ?", parameter));
 
 		try {
 			statement = connection.prepareStatement(sql.toString());
@@ -70,13 +71,14 @@ public class UsuarioDAO {
 			statement.setString(1, usuario.getNome());
 			statement.setString(2, usuario.getEmail());
 			statement.setString(3, usuario.getTelefone());
+			statement.setString(4, usuario.getImagem());
 
 			if (usuario.getPassword() != null && usuario.getPassword().trim() != "") {
 
-				statement.setString(4, usuario.getPassword());
-				statement.setInt(5, usuario.getId());
+				statement.setString(5, usuario.getPassword());
+				statement.setInt(6, usuario.getId());
 			} else {
-				statement.setInt(4, usuario.getId());
+				statement.setInt(5, usuario.getId());
 			}
 			statement.executeUpdate();
 			statement.close();
@@ -119,7 +121,7 @@ public class UsuarioDAO {
 
 	public Usuario buscarUsuario(int id) {
 		try {
-			String sql = "SELECT id, nome, email, telefone, password, admin FROM usuario WHERE id=?";
+			String sql = "SELECT id, nome, email, telefone, password, admin, imagem FROM usuario WHERE id=?";
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, id);
 			ResultSet resultSet = statement.executeQuery();
@@ -133,6 +135,7 @@ public class UsuarioDAO {
 				usuario.setTelefone(resultSet.getString(4));
 				usuario.setPassword(resultSet.getString(5));
 				usuario.setAdmin(resultSet.getBoolean(6));
+				usuario.setImagem(resultSet.getString(7));
 
 				return usuario;
 			}
@@ -150,7 +153,7 @@ public class UsuarioDAO {
 		estadoOperacao = false;
 
 		try {
-			sql = "SELECT id, nome, email, telefone FROM usuario ORDER BY nome ASC";
+			sql = "SELECT id, nome, email, telefone, imagem FROM usuario ORDER BY nome ASC";
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery();
 
@@ -160,6 +163,7 @@ public class UsuarioDAO {
 				usuario.setNome(resultSet.getString(2));
 				usuario.setEmail(resultSet.getString(3));
 				usuario.setTelefone(resultSet.getString(4));
+				usuario.setImagem(resultSet.getString(5));
 				listaUsuario.add(usuario);
 			}
 			statement.close();

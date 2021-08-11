@@ -29,6 +29,7 @@ public class UsuarioControllerLogin extends ProjectHttpServlet {
 		final UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		
 	
 		try {
 			final Usuario usuario = usuarioDAO.login(email, password);
@@ -37,12 +38,13 @@ public class UsuarioControllerLogin extends ProjectHttpServlet {
 			if (usuario != null) {
 				Sessao.configure(request, usuario.getId(), usuario.getNome());
 				
-				;
 				response.addCookie(new Cookie("usuariologado", usuario.getNome()));
 			    response.sendRedirect("/projetoweb/usuario");
 			}else {
-				 System.out.println("Erro ao logar!");
-				 response.sendRedirect("/projetoweb/usuario/logar");
+				 request.setAttribute("erro", "Erro ao logar!");
+				 request.getRequestDispatcher("/WEB-INF/usuario/login.jsp").forward(request, response);
+				 return;
+				
 			}
 			
 		} catch (Exception e) {

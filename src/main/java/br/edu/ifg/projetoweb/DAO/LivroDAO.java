@@ -26,13 +26,14 @@ public class LivroDAO {
 		
 		try {
 			connection.setAutoCommit(false);
-			sql = "INSERT INTO livros (isbn, nome, autor, valor, descricao) VALUES(?,?,?,?,?)";
+			sql = "INSERT INTO livros (isbn, nome, autor, valor, descricao, imagem) VALUES(?,?,?,?,?,?)";
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1, livro.getISBN());
 			statement.setString(2, livro.getNome());
 			statement.setString(3, livro.getAutor());
 			statement.setDouble(4, livro.getValor());
 			statement.setString(5, livro.getDescricao());
+			statement.setString(6, livro.getImagem());
 
 			estadoOperacao = statement.executeUpdate() > 0;
 			if (estadoOperacao == false) {
@@ -63,7 +64,7 @@ public class LivroDAO {
 	
 	public void alterarLivro(Livro livro) {
        
-       String sql = ("UPDATE livros SET isbn = ?, nome = ?, autor = ?, valor = ?, descricao = ? WHERE id = ?");
+       String sql = ("UPDATE livros SET isbn = ?, nome = ?, autor = ?, valor = ?, descricao = ?, imagem =? WHERE id = ?");
        
         try {
         	statement = connection.prepareStatement(sql.toString());
@@ -72,7 +73,8 @@ public class LivroDAO {
 			statement.setString(3, livro.getAutor());
 			statement.setDouble(4, livro.getValor());
 			statement.setString(5, livro.getDescricao());
-			statement.setInt(6, livro.getId());
+			statement.setString(6, livro.getImagem());
+			statement.setInt(7, livro.getId());
 			statement.executeUpdate();
 			statement.close();
 			
@@ -111,7 +113,7 @@ public class LivroDAO {
 	
 	public Livro buscarLivro(int id) {
 		try {
-			String sql ="SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id WHERE l.id=?";
+			String sql ="SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, l.imagem, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id WHERE l.id=?";
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1,id);
 			ResultSet resultSet = statement.executeQuery();
@@ -125,7 +127,8 @@ public class LivroDAO {
 				livro.setAutor(resultSet.getString(4));
 				livro.setValor(resultSet.getDouble(5));
 				livro.setDescricao(resultSet.getString(6));
-				livro.setQuantidade(resultSet.getInt(7));
+				livro.setImagem(resultSet.getString(7));
+				livro.setQuantidade(resultSet.getInt(8));
 				statement.close();
 				return livro;
 			}
@@ -145,7 +148,7 @@ public class LivroDAO {
 
 		try {
 			
-			sql = " SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id ORDER BY nome ASC;";
+			sql = " SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, l.imagem, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id ORDER BY nome ASC;";
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery();
 
@@ -157,7 +160,9 @@ public class LivroDAO {
 				livro.setAutor(resultSet.getString(4));
 				livro.setValor(resultSet.getDouble(5));
 				livro.setDescricao(resultSet.getString(6));
-				livro.setQuantidade(resultSet.getInt(7));
+				livro.setImagem(resultSet.getString(7));
+				livro.setQuantidade(resultSet.getInt(8));
+				
 				listaLivros.add(livro);
 			}
 			statement.close();

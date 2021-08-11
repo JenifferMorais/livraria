@@ -7,12 +7,14 @@ public class Sessao {
 
 	private final static String USUARIO_ID = "usuarioid";
 	private final static String USUARIO_NOME = "nomeUsuario";
+	
 
 	public static void configure(HttpServletRequest request, int id, String nome) {
 
 		HttpSession sessao = request.getSession();
 		sessao.setAttribute(USUARIO_ID, id);
 		sessao.setAttribute(USUARIO_NOME, nome);
+		
 	}
 
 	public static int getUsuarioId(HttpServletRequest request) {
@@ -31,5 +33,6 @@ public class Sessao {
 		return nomeUsuario;
 
 	}
+	
 
 }

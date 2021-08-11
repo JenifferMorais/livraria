@@ -29,6 +29,14 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/books/livro.png";
+    return true;
+}
+</script>
+
 </head>
 
 <body>
@@ -108,43 +116,48 @@
             </div>
             <!-- row -->
             <div class="row">
+             <form class="form-horizontal form-material" method ="post" action="/projetoweb/livros/update">
                 <div class="col-md-4 col-xs-12">
                     <div class="white-box">
                         <div class="user-bg"> <img width="100%" alt="user" src="/projetoweb/images/large/img1.jpg">
                             <div class="overlay-box">
                                 <div class="user-content">
-                                    <a href="javascript:void(0)"><img src="/projetoweb/images/users/genu.jpg"
+                                    <a href="javascript:void(0)"><img src="/projetoweb/images/books/${livro.imagem}" onerror="imgError(this);"
                                             class="thumb-lg img-circle" alt="img"></a>
                                     <h4 class="text-white">${livro.nome}</h4>
+                                    <h5 class="text-white">${livro.autor}</h5>
                                     
                                 </div>
                             </div>
                         </div>
                         <div class="user-btm-box">
-                            
+                            <label class="col-md-12">Imagem</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="imagem" value="${livro.imagem}" data-ls-module="charCounter" maxlength="100"
+                                        class="form-control form-control-line"> </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 col-xs-12">
                     <div class="white-box">
-                        <form class="form-horizontal form-material" method ="post" action="/projetoweb/livros/update">
+                       
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="nome" value="${livro.nome}"
+                                    <input type="text" name="nome" value="${livro.nome}" data-ls-module="charCounter" maxlength="100"
                                         class="form-control form-control-line"> </div>
                             </div>
                
                             <div class="form-group">
                                 <label class="col-md-12">Autor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="autor"  value="${livro.autor}" class="form-control form-control-line">
+                                    <input type="text" name="autor"  value="${livro.autor}" data-ls-module="charCounter" maxlength="100" class="form-control form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Valor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="valor" value="${livro.valor}"
+                                    <input type="text" name="valor" value="${livro.valor}" 
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
@@ -157,7 +170,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="isbn" value="${livro.ISBN}"
+                                    <input type="text" name="isbn" value="${livro.ISBN}" data-ls-module="charCounter" maxlength="100"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
@@ -172,13 +185,13 @@
                                 <div class="col-sm-12">
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="hidden" name="id" value="${livro.id}" /> 
-                                    <button class="btn btn-success" type="submit">Atualizar</button>
+                                    <button onclick="return confirm('Deseja confirmar as alterações?');" class="btn btn-success" type="submit">Atualizar</button>
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
-            </div>
+            </form></div>
             <!-- /.row -->
         </div>
 <!-- /.container-fluid -->

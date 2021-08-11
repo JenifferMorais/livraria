@@ -30,6 +30,7 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 </head>
 
 <body>
@@ -149,14 +150,14 @@
 											<td><c:out value="${usuario.nome}" /></td>
 											<td><c:out value="${usuario.email}" /></td>
 											<td><c:out value="${usuario.telefone}" /></td>
-											
+											<td></td>
 											<td><a  class="btn btn-success" href="/projetoweb/usuario/${usuario.id }">
 													Editar</a></td>
 													
 											<td>
 											<form action="/projetoweb/usuario" method="POST">
 											<input type="hidden" name="_method" value="DELETE"><input
-												type="hidden" name="id" value="${usuario.id}" /> <input class="btn btn-success"
+												type="hidden" name="id" value="${usuario.id}" /> <input onclick="return confirm('Tem certeza de que deseja excluir este item?');" class="btn btn-success"
 												value="Excluir" type="submit" /> </form> </td> 
 										</tr>
 									</c:forEach>

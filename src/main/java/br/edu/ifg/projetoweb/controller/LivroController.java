@@ -97,6 +97,7 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setValor(Double.parseDouble(request.getParameter("valor")));
 		livro.setISBN(request.getParameter("isbn"));
 		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+		livro.setImagem(request.getParameter("imagem"));
 
 		livroDAO.alterarLivro(livro);
 
@@ -150,6 +151,7 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setValor(Double.parseDouble(request.getParameter("valor")));
 		livro.setISBN(request.getParameter("isbn"));
 		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+		livro.setImagem(request.getParameter("imagem"));
 
 		try {
 			livroDAO.inserirLivro(livro);
