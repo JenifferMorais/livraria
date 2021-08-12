@@ -75,7 +75,7 @@ public class LivroDAO {
 			statement.setString(6, livro.getImagem());
 			statement.setInt(7, livro.getId());
 			statement.executeUpdate();
-			System.out.println("Sucesso!");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

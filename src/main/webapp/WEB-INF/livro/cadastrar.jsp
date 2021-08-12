@@ -120,7 +120,7 @@ function imgError(image) {
                             <div class="overlay-box">
                                 <div class="user-content">
                                     <a href="javascript:void(0)"><img src="/projetoweb/images/books/${livro.imagem}" onerror="imgError(this);"
-                                            class="thumb-lg img-circle" alt="img"></a>
+                                            class="thumb-lg" alt="img"></a>
                                     <h4 class="text-white"></h4>
                                     
                                 </div>

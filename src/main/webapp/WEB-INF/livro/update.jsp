@@ -67,7 +67,7 @@ function imgError(image) {
                     </li>
                     <li class="menu-container"><a class="profile-pic" href="#">
 							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
-							width="36" class="img-circle"><b class="hidden-xs"><c:out
+							width="36" class=" "><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
 						<div class="menu-body">
@@ -130,8 +130,8 @@ function imgError(image) {
                         <div class="user-bg"> <img width="100%" alt="user" src="/projetoweb/images/large/img1.jpg">
                             <div class="overlay-box">
                                 <div class="user-content">
-                                    <a href="javascript:void(0)"><img src="/projetoweb/images/books/${livro.imagem}" onerror="imgError(this);"
-                                            class="thumb-lg img-circle" alt="img"></a>
+                                    <a href="javascript:void(0)"><img src="/projetoweb/images/books/${livro.imagem}.jpg" onerror="imgError(this);"
+                                            class="thumb-lg  " alt="img"></a>
                                     <h4 class="text-white">${livro.nome}</h4>
                                     <h5 class="text-white">${livro.autor}</h5>
                                     

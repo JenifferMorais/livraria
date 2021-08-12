@@ -82,7 +82,7 @@ public class UsuarioDAO {
 			}
 			statement.executeUpdate();
 			statement.close();
-			System.out.println("Sucesso!");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

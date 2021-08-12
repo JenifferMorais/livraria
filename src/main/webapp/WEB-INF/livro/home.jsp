@@ -124,7 +124,7 @@
 								<img src="/projetoweb/images/books/livro.png" alt="Image"
 									class="img-fluid tm-gallery-img" />
 								<figcaption>
-									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+									<h4 class="tm-gallery-title">A rainha do nada (Vol. 3 O Povo do Ar)</h4>
 									<p class="tm-gallery-description">Nam in suscipit nisi</p>
 									<p class="tm-gallery-price">$45 / $55</p>
 									<a class="btn btn-success" href="">Saiba mais</a>
@@ -133,11 +133,11 @@
 						</article>
 						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 							<figure>
-								<img src="/projetoweb/images/books/livro.png" alt="Image"
+								<img src="/projetoweb/images/books/nao pare.jpg" alt="Image"
 									class="img-fluid tm-gallery-img" />
 								<figcaption>
-									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
-									<p class="tm-gallery-description">Nam in suscipit nisi</p>
+									<h4 class="tm-gallery-title">Não Pare</h4>
+									<p class="tm-gallery-description">Por Fml Pepper</p>
 									<p class="tm-gallery-price">$45 / $55</p>
 									<a class="btn btn-success" href="">Saiba mais</a>
 								</figcaption>
