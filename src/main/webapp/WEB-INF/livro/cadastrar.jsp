@@ -13,7 +13,7 @@
     <meta name="description"
         content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>My Admin Template by WrapPixel</title>
+    <title>MyBooks</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/myadmin-lite/" />
     
     <link rel="icon" type="image/png" sizes="16x16" href="/projetoweb/images/favicon.png">
@@ -49,8 +49,8 @@ function imgError(image) {
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg "
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i
                         class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="dashboard.html"><i
-                            class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">My Admin</span></a></div>
+                <div class="top-left-part"><a class="logo" href="/projetoweb/livros/home"><i
+                            class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs hidden-lg waves-effect waves-light"><i
                                 class="ti-arrow-circle-left ti-menu"></i></a></li>
@@ -84,10 +84,8 @@ function imgError(image) {
                         </div>
                     </li>
                   
-                    <li><a href="/projetoweb/usuario" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Usuários</a></li>
-					<li><a href="/projetoweb/livros" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Livros</a></li>
+                    <li><a href="/projetoweb/usuario" class="waves-effect">Gerenciar Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
                    
                 </ul>
                 <div class="center p-20">
@@ -169,13 +167,13 @@ function imgError(image) {
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="isbn" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="isbn" data-ls-module="charCounter" maxlength="25"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Quantidade</label>
                                 <div class="col-md-12">
-                                    <input type="text"  name="quantidade" 
+                                    <input type="text"  name="quantidade" data-ls-module="charCounter" maxlength="9"
                                         class="form-control form-control-line"> </div>
                             </div>
                             

@@ -6,10 +6,10 @@
 <html lang="pt-BR">
 <head>
 
-<title>My Admin Template by WrapPixel</title>
+<title>MyBooks</title>
 <link rel="canonical"
 	href="https://www.wrappixel.com/templates/myadmin-lite/" />
-	
+
 
 <link rel="icon" type="image/png" sizes="16x16"
 	href="/projetoweb/images/favicon.png">
@@ -21,11 +21,11 @@
 <link
 	href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css"
 	rel="stylesheet">
-	
 
+<link href="/projetoweb/css/templatemo-style.css" rel="stylesheet" />
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
-<link href="/projetoweb/css/templatemo-style.css" rel="stylesheet">
+
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -48,9 +48,8 @@
 					href="javascript:void(0)" data-toggle="collapse"
 					data-target=".navbar-collapse"><i class="ti-menu"></i></a>
 				<div class="top-left-part">
-					<a class="logo" href="dashboard.html"><i
-						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">My
-							Admin</span></a>
+					<a class="logo" href="/projetoweb/livros/home"><i
+						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
 				</div>
 				<ul class="nav navbar-top-links navbar-left hidden-xs">
 					<li><a href="javascript:void(0)"
@@ -59,24 +58,24 @@
 				</ul>
 				<ul class="nav navbar-top-links navbar-right pull-right">
 					<li>
-						<form onsubmit="searchUsers(this)" role="search" class="app-search hidden-xs">
+						<form onsubmit="searchUsers(this)" role="search"
+							class="app-search hidden-xs">
 							<input type="text" placeholder="Search..." class="form-control">
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-					<li class="menu-container"><a class="profile-pic" href=""> <img
-							src="images/users/hritik.jpg" alt="user-img" width="36"
-							class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b>
+					<li class="menu-container"><a class="profile-pic" href="#">
+							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
+							width="36" class="img-circle"><b class="hidden-xs"><c:out
+									value="${nomeUsuario}" /></b>
 					</a>
-				<div class="menu-body">	
-				<div><ul>
-				<li>
-				 <a  href="/projetoweb/usuario/logoff">Sair</a>
-				</li>
-				
-				</ul>
-				</div>
-				</div></li>
+						<div class="menu-body">
+							<div>
+								<ul>
+									<li><a href="/projetoweb/usuario/logoff">Sair</a></li>
+								</ul>
+							</div>
+						</div></li>
 				</ul>
 			</div>
 			<!-- /.navbar-header -->
@@ -88,17 +87,16 @@
 				<ul class="nav" id="side-menu">
 					<li class="sidebar-search hidden-sm hidden-md hidden-lg">
 						<div class="input-group custom-search-form">
-							<input type="text" class="form-control" placeholder="Search..." id="search-input">
-							<span class="input-group-btn">
+							<input type="text" class="form-control" placeholder="Search..."
+								id="search-input"> <span class="input-group-btn">
 								<button class="btn btn-default" type="button" id="search-button">
 									<i class="ti-search"></i>
 								</button>
 							</span>
 						</div>
-						
+
 					</li>
-					<li><a href="/projetoweb/livros/home" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Livros</a></li>
+					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
@@ -112,66 +110,72 @@
 		<div id="page-wrapper">
 			<div class="container-fluid">
 				<div class="row bg-title">
-					<div class="col-lg-12">
-						
-					</div>
+					<div class="col-lg-12"></div>
 					<!-- /.col-lg-12 -->
 				</div>
 				<!-- row -->
 
-		<!-- Gallery -->
-		<div class="row tm-gallery">
-			<!-- gallery page 1 -->
-			<div id="tm-gallery-page-pizza" class="tm-gallery-page">
-			 
-				<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-					<figure>
-						<img src="/projetoweb/images/books/livro.png" alt="Image" class="img-fluid tm-gallery-img" />
-						<figcaption>
-							<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-							<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-							<p class="tm-gallery-price">$65 / $70</p>
-						</figcaption>
-					</figure>
-				</article>
-				<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-					<figure>
-						<img src="/projetoweb/images/books/livro.png" alt="Image" class="img-fluid tm-gallery-img" />
-						<figcaption>
-							<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-							<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-							<p class="tm-gallery-price">$65 / $70</p>
-						</figcaption>
-					</figure>
-				</article>
-				<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-					<figure>
-						<img src="/projetoweb/images/books/livro.png" alt="Image" class="img-fluid tm-gallery-img" />
-						<figcaption>
-							<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-							<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-							<p class="tm-gallery-price">$65 / $70</p>
-						</figcaption>
-					</figure>
-				</article>
-				<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-					<figure>
-						<img src="/projetoweb/images/books/livro.png" alt="Image" class="img-fluid tm-gallery-img" />
-						<figcaption>
-							<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-							<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-							<p class="tm-gallery-price">$65 / $70</p>
-						</figcaption>
-					</figure>
-				</article>
-				
-			</div> <!-- gallery page 1 -->
+				<!-- Gallery -->
+				<div class="row tm-gallery">
+					<!-- gallery page 1 -->
+					<div class="tm-gallery-page">
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<img src="/projetoweb/images/books/livro.png" alt="Image"
+									class="img-fluid tm-gallery-img" />
+								<figcaption>
+									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+									<p class="tm-gallery-description">Nam in suscipit nisi</p>
+									<p class="tm-gallery-price">$45 / $55</p>
+									<a class="btn btn-success" href="">Saiba mais</a>
+								</figcaption>
+							</figure>
+						</article>
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<img src="/projetoweb/images/books/livro.png" alt="Image"
+									class="img-fluid tm-gallery-img" />
+								<figcaption>
+									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+									<p class="tm-gallery-description">Nam in suscipit nisi</p>
+									<p class="tm-gallery-price">$45 / $55</p>
+									<a class="btn btn-success" href="">Saiba mais</a>
+								</figcaption>
+							</figure>
+						</article>
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<img src="/projetoweb/images/books/livro.png" alt="Image"
+									class="img-fluid tm-gallery-img" />
+								<figcaption>
+									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+									<p class="tm-gallery-description">Nam in suscipit nisi</p>
+									<p class="tm-gallery-price">$45 / $55</p>
+									<a class="btn btn-success" href="">Saiba mais</a>
+								</figcaption>
+							</figure>
+						</article>
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<img src="/projetoweb/images/books/livro.png" alt="Image"
+									class="img-fluid tm-gallery-img" />
+								<figcaption>
+									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+									<p class="tm-gallery-description">Nam in suscipit nisi</p>
+									<p class="tm-gallery-price">$45 / $55</p>
+									
+								</figcaption>
+								<a class="btn btn-success" href="">Saiba mais</a>
+							</figure>
+						</article>
+					</div>
+					<!-- gallery page 1 -->
 
+				</div>
+				<!-- /.container-fluid -->
 			</div>
-			<!-- /.container-fluid -->
 		</div>
-		</div>
-		
+
 		<!-- /#page-wrapper -->
 		<footer class="footer text-center">
 			2020 &copy; Myadmin brought to you by <a

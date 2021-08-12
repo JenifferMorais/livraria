@@ -96,9 +96,10 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setISBN(request.getParameter("isbn"));
 		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 		livro.setImagem(request.getParameter("imagem"));
-
 		livroDAO.alterarLivro(livro);
-
+		livroDAO.alterarEstoque(livro);
+		
+		
 		try {
 			livros = livroDAO.listarLivros();
 		} catch (SQLException e) {

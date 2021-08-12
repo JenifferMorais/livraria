@@ -13,7 +13,8 @@
     <meta name="description"
         content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>My Admin Template by WrapPixel</title>
+    <title>MyBooks</title>
+    
     <link rel="canonical" href="https://www.wrappixel.com/templates/myadmin-lite/" />
     
     <link rel="icon" type="image/png" sizes="16x16" href="/projetoweb/images/favicon.png">
@@ -23,6 +24,7 @@
     <link href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
    
     <link href="/projetoweb/css/style.min.css" rel="stylesheet">
+    <link href="/projetoweb/css/complement.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,8 +52,8 @@ function imgError(image) {
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg "
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i
                         class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="dashboard.html"><i
-                            class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">My Admin</span></a></div>
+                <div class="top-left-part"><a class="logo" href="/projetoweb/livros/home"><i
+                            class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs hidden-lg waves-effect waves-light"><i
                                 class="ti-arrow-circle-left ti-menu"></i></a></li>
@@ -63,10 +65,18 @@ function imgError(image) {
                             <a href=""><i class="ti-search"></i></a>
                         </form>
                     </li>
-                    <li>
-                        <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/hritik.jpg" alt="user-img" width="36"
-                                class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
-                    </li>
+                    <li class="menu-container"><a class="profile-pic" href="#">
+							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
+							width="36" class="img-circle"><b class="hidden-xs"><c:out
+									value="${nomeUsuario}" /></b>
+					</a>
+						<div class="menu-body">
+							<div>
+								<ul>
+									<li><a href="/projetoweb/usuario/logoff">Sair</a></li>
+								</ul>
+							</div>
+						</div></li>
                 </ul>
             </div>
             <!-- /.navbar-header -->
@@ -85,10 +95,8 @@ function imgError(image) {
                         </div>
                     </li>
                   
-                    <li><a href="/projetoweb/usuario" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Usuários</a></li>
-					<li><a href="/projetoweb/livros" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Livros</a></li>
+                    <li><a href="/projetoweb/usuario" class="waves-effect"></i>Gerenciar Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
                    
                 </ul>
                 <div class="center p-20">
@@ -170,13 +178,13 @@ function imgError(image) {
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="isbn" value="${livro.ISBN}" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="isbn" value="${livro.ISBN}" data-ls-module="charCounter" maxlength="25"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Quantidade</label>
                                 <div class="col-md-12">
-                                    <input type="text"  name="quantidade" value="${livro.quantidade}"
+                                    <input type="text"  name="quantidade" value="${livro.quantidade}" data-ls-module="charCounter" maxlength="9"
                                         class="form-control form-control-line"> </div>
                             </div>
                             

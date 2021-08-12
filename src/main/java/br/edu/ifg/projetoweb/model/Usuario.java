@@ -10,7 +10,7 @@ public class Usuario {
 	String imagem;
 	
 	
-
+	
 	public String getImagem() {
 		return imagem;
 	}

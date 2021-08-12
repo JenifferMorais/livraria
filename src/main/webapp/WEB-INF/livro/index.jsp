@@ -7,7 +7,7 @@
 
 <head>
 
-<title>My Admin Template by WrapPixel</title>
+<title>MyBooks</title>
 <link rel="canonical"
 	href="https://www.wrappixel.com/templates/myadmin-lite/" />
 
@@ -46,9 +46,8 @@
 					href="javascript:void(0)" data-toggle="collapse"
 					data-target=".navbar-collapse"><i class="ti-menu"></i></a>
 				<div class="top-left-part">
-					<a class="logo" href="dashboard.html"><i
-						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">My
-							Admin</span></a>
+					<a class="logo" href="/projetoweb/livros/home"><i
+						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
 				</div>
 				<ul class="nav navbar-top-links navbar-left hidden-xs">
 					<li><a href="javascript:void(0)"
@@ -62,19 +61,18 @@
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-					<li class="menu-container"><a class="profile-pic" href=""> <img
-							src="images/users/hritik.jpg" alt="user-img" width="36"
-							class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b>
+				<li class="menu-container"><a class="profile-pic" href="#">
+							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
+							width="36" class="img-circle"><b class="hidden-xs"><c:out
+									value="${nomeUsuario}" /></b>
 					</a>
-				<div class="menu-body">	
-				<div><ul>
-				<li>
-				 <a  href="/projetoweb/usuario/logoff">Sair</a>
-				</li>
-				
-				</ul>
-				</div>
-				</div></li>
+						<div class="menu-body">
+							<div>
+								<ul>
+									<li><a href="/projetoweb/usuario/logoff">Sair</a></li>
+								</ul>
+							</div>
+						</div></li>
 				</ul>
 			</div>
 			<!-- /.navbar-header -->
@@ -95,10 +93,8 @@
 						</div>
 						
 					</li>
-					<li><a href="/projetoweb/usuario" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Usuários</a></li>
-					<li><a href="/projetoweb/livros" class="waves-effect"><i
-							class="ti-layout fa-fw"></i>Gerenciar Livros</a></li>
+					<li><a href="/projetoweb/usuario" class="waves-effect">Gerenciar Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect"></i>Gerenciar Livros</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a

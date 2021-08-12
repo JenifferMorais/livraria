@@ -9,21 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 import br.edu.ifg.projetoweb.model.Livro;
 
-
 public class LivroDAO {
 	private Connection connection;
 	private PreparedStatement statement;
 	private boolean estadoOperacao;
-	
+
 	public LivroDAO(Connection connection) {
 		this.connection = connection;
 	}
-	
+
 	public long inserirLivro(Livro livro) throws SQLException {
 		String sql = null;
 		long id_gerado = 0;
 		estadoOperacao = false;
-		
+
 		try {
 			connection.setAutoCommit(false);
 			sql = "INSERT INTO livros (isbn, nome, autor, valor, descricao, imagem) VALUES(?,?,?,?,?,?)";
@@ -61,14 +60,14 @@ public class LivroDAO {
 		return id_gerado;
 
 	}
-	
+
 	public void alterarLivro(Livro livro) {
-       
-       String sql = ("UPDATE livros SET isbn = ?, nome = ?, autor = ?, valor = ?, descricao = ?, imagem =? WHERE id = ?");
-       
-        try {
-        	statement = connection.prepareStatement(sql.toString());
-            statement.setString(1, livro.getISBN());
+
+		String sql = ("UPDATE livros SET isbn = ?, nome = ?, autor = ?, valor = ?, descricao = ?, imagem =? WHERE id = ?");
+
+		try {
+			statement = connection.prepareStatement(sql.toString());
+			statement.setString(1, livro.getISBN());
 			statement.setString(2, livro.getNome());
 			statement.setString(3, livro.getAutor());
 			statement.setDouble(4, livro.getValor());
@@ -76,50 +75,47 @@ public class LivroDAO {
 			statement.setString(6, livro.getImagem());
 			statement.setInt(7, livro.getId());
 			statement.executeUpdate();
-			statement.close();
-			
 			System.out.println("Sucesso!");
-        } catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-    }
-	
+	}
+
 	public void alterarEstoque(Livro livro) {
-		String sql = ("UPDATE estoque SET quantidade = ? WHERE livro.id = ?");
-		
+		String sql = ("UPDATE estoque SET quantidade = ? WHERE livros_id = ?");
+
 		try {
 			statement = connection.prepareStatement(sql.toString());
 			statement.setInt(1, livro.getQuantidade());
 			statement.setInt(2, livro.getId());
 			statement.executeUpdate();
 			statement.close();
-			
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void removerLivro(int id) {
 		try {
 			String sql = "DELETE FROM livros where id = ?;";
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1,id);
+			statement.setInt(1, id);
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Livro buscarLivro(int id) {
 		try {
-			String sql ="SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, l.imagem, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id WHERE l.id=?";
+			String sql = "SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, l.imagem, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id WHERE l.id=?";
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1,id);
+			statement.setInt(1, id);
 			ResultSet resultSet = statement.executeQuery();
-			
-			
-			if(resultSet.next()) {
+
+			if (resultSet.next()) {
 				Livro livro = new Livro();
 				livro.setISBN(resultSet.getString(1));
 				livro.setId(resultSet.getInt(2));
@@ -132,8 +128,8 @@ public class LivroDAO {
 				statement.close();
 				return livro;
 			}
-			
-		}catch(SQLException e){
+
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -144,10 +140,9 @@ public class LivroDAO {
 		List<Livro> listaLivros = new ArrayList<>();
 		String sql = null;
 		estadoOperacao = false;
-		
 
 		try {
-			
+
 			sql = " SELECT l.isbn, l.id, l.nome, l.autor, l.valor, l.descricao, l.imagem, e.quantidade FROM livros l JOIN estoque e on l.id=e.livros_id ORDER BY nome ASC;";
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery();
@@ -162,7 +157,7 @@ public class LivroDAO {
 				livro.setDescricao(resultSet.getString(6));
 				livro.setImagem(resultSet.getString(7));
 				livro.setQuantidade(resultSet.getInt(8));
-				
+
 				listaLivros.add(livro);
 			}
 			statement.close();
@@ -171,7 +166,5 @@ public class LivroDAO {
 		}
 		return listaLivros;
 	}
-	
-	
-	
+
 }
