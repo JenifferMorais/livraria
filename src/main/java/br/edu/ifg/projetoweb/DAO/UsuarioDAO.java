@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import br.edu.ifg.projetoweb.model.Usuario;
 import br.edu.ifg.projetoweb.utils.Hashing;
 
@@ -63,7 +62,8 @@ public class UsuarioDAO {
 
 		String parameter = usuario.getPassword() != null && usuario.getPassword().trim().length() != 0 ? ",password = ?"
 				: "";
-		String sql = (String.format("UPDATE usuario SET nome = ?, email = ?, telefone = ?, imagem =? %s WHERE id = ?", parameter));
+		String sql = (String.format("UPDATE usuario SET nome = ?, email = ?, telefone = ?, imagem =? %s WHERE id = ?",
+				parameter));
 
 		try {
 			statement = connection.prepareStatement(sql.toString());
@@ -101,6 +101,8 @@ public class UsuarioDAO {
 				}
 				statement.close();
 			}
+		} catch (NullPointerException e) {
+			return false;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

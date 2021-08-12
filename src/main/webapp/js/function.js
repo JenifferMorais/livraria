@@ -1,6 +1,6 @@
-let lista = querySelector("#user-list")
-let searchInput = querySelector("#search-input")
-let searchButton = querySelector("#search-button")
+let lista = document.querySelector("#user-list")
+let searchInput = document.querySelector("#search-input")
+let searchButton = document.querySelector("#search-button")
 
 function searchUsers(e) {
 	e.preventDefault()

@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import br.edu.ifg.projetoweb.DAO.UsuarioDAO;
 import br.edu.ifg.projetoweb.core.ProjectHttpServlet;
 import br.edu.ifg.projetoweb.model.Usuario;
@@ -25,14 +24,12 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Usuario> usuarios = new ArrayList<>();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
 		Integer admin = Sessao.getUsuarioId(request);
 		String pathInfo = request.getPathInfo();
-
 
 		if (pathInfo == null || pathInfo.equals("/")) {
 
@@ -68,10 +65,9 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		String nomeUsuario = Sessao.getUsuarioNome(request);
 		request.setAttribute("nomeUsuario", nomeUsuario);
-		
 
 		int idUsuario = Sessao.getUsuarioId(request);
-		
+
 		int id = Integer.parseInt(splits[1]);
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
@@ -95,7 +91,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		List<Usuario> usuarios = null;
 
-		int idUsuario = Sessao.getUsuarioId(request);
+		Integer idUsuario = Sessao.getUsuarioId(request);
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		if (idUsuario == id || usuarioDAO.isAdmin(idUsuario)) {
@@ -113,8 +109,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
@@ -146,8 +141,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final Connection connection = (Connection) request.getAttribute("connection");
 		final UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		final Usuario usuario = new Usuario();
@@ -170,5 +164,4 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		}
 		response.sendRedirect("/projetoweb/usuario/logar");
 	}
-
 }

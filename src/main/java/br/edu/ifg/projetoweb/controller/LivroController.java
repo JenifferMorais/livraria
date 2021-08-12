@@ -23,12 +23,11 @@ public class LivroController extends ProjectHttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Livro> livros = new ArrayList<>();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		LivroDAO livroDAO = new LivroDAO(connection);
-		
-		int idUsuario = Sessao.getUsuarioId(request);
+
+		Integer idUsuario = Sessao.getUsuarioId(request);
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
@@ -83,8 +82,7 @@ public class LivroController extends ProjectHttpServlet {
 
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		Connection connection = (Connection) request.getAttribute("connection");
 		LivroDAO livroDAO = new LivroDAO(connection);
@@ -120,7 +118,7 @@ public class LivroController extends ProjectHttpServlet {
 		List<Livro> livros = null;
 
 		int id = Integer.parseInt(request.getParameter("id"));
-		int idUsuario = Sessao.getUsuarioId(request);
+		Integer idUsuario = Sessao.getUsuarioId(request);
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
@@ -136,11 +134,9 @@ public class LivroController extends ProjectHttpServlet {
 
 		request.setAttribute("livros", livros);
 		Router.listarLivros(request, response);
-
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final Connection connection = (Connection) request.getAttribute("connection");
 		final LivroDAO livroDAO = new LivroDAO(connection);
 		final Livro livro = new Livro();
@@ -162,5 +158,4 @@ public class LivroController extends ProjectHttpServlet {
 
 		response.sendRedirect("/projetoweb/livros");
 	}
-
 }
