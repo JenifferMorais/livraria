@@ -10,13 +10,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter("/*")
+@WebFilter({ "/usuario/*", "/livro/*" })
 public class FiltrarAcento implements Filter {
 
 	public void init(FilterConfig config) throws ServletException {
 	}
 
 	@Override
+
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain next)
 			throws IOException, ServletException {
 		// Respect the client-specified character encoding
