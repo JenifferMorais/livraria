@@ -23,7 +23,8 @@ public class LivroController extends ProjectHttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Livro> livros = new ArrayList<>();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		LivroDAO livroDAO = new LivroDAO(connection);
 
@@ -34,14 +35,15 @@ public class LivroController extends ProjectHttpServlet {
 		String pathInfo = request.getPathInfo();
 
 		if (pathInfo == null || pathInfo.equals("/")) {
-			if (usuarioDAO.isAdmin(idUsuario)) {
-				try {
-					livros = livroDAO.listarLivros();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-				request.setAttribute("livros", livros);
+			try {
+				livros = livroDAO.listarLivros();
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
+			if (idUsuario != null) {
+				request.setAttribute("admin", usuarioDAO.isAdmin(idUsuario));
+			}
+			request.setAttribute("livros", livros);
 			Router.listarLivros(request, response);
 			return;
 		}
@@ -82,7 +84,8 @@ public class LivroController extends ProjectHttpServlet {
 
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 
 		Connection connection = (Connection) request.getAttribute("connection");
 		LivroDAO livroDAO = new LivroDAO(connection);
@@ -98,8 +101,7 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setImagem(request.getParameter("imagem"));
 		livroDAO.alterarLivro(livro);
 		livroDAO.alterarEstoque(livro);
-		
-		
+
 		try {
 			livros = livroDAO.listarLivros();
 		} catch (SQLException e) {
@@ -137,7 +139,8 @@ public class LivroController extends ProjectHttpServlet {
 		Router.listarLivros(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		final Connection connection = (Connection) request.getAttribute("connection");
 		final LivroDAO livroDAO = new LivroDAO(connection);
 		final Livro livro = new Livro();

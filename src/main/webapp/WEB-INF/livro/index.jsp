@@ -56,12 +56,13 @@
 				</ul>
 				<ul class="nav navbar-top-links navbar-right pull-right">
 					<li>
-						<form onsubmit="searchUsers(this)" role="search" class="app-search hidden-xs">
+						<form onsubmit="searchUsers(this)" role="search"
+							class="app-search hidden-xs">
 							<input type="text" placeholder="Search..." class="form-control">
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-				<li class="menu-container"><a class="profile-pic" href="#">
+					<li class="menu-container"><a class="profile-pic" href="#">
 							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
@@ -84,17 +85,19 @@
 				<ul class="nav" id="side-menu">
 					<li class="sidebar-search hidden-sm hidden-md hidden-lg">
 						<div class="input-group custom-search-form">
-							<input type="text" class="form-control" placeholder="Search..." id="search-input">
-							<span class="input-group-btn">
+							<input type="text" class="form-control" placeholder="Search..."
+								id="search-input"> <span class="input-group-btn">
 								<button class="btn btn-default" type="button" id="search-button">
 									<i class="ti-search"></i>
 								</button>
 							</span>
 						</div>
-						
+
 					</li>
-					<li><a href="/projetoweb/usuario" class="waves-effect">Gerenciar Usuários</a></li>
-					<li><a href="/projetoweb/livros" class="waves-effect"></i>Gerenciar Livros</a></li>
+					<li><a href="/projetoweb/usuario" class="waves-effect">Gerenciar
+							Usuários</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect"></i>Gerenciar
+							Livros</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
@@ -122,49 +125,58 @@
 				<div class="row">
 
 					<div class='col-sm-8 col-md-8'>
-						
-							<table class='table'>
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Nome</th>
-										<th>Valor</th>
-										<th>Autor</th>
-										<th>ISBN</th>
-										<th>Quantidade</th>
-										
-										<th></th>
-										<th><a href="/projetoweb/livros/cadastrar" class="btn btn-success" >Novo</a></th>
-									</tr>
-								</thead>
-								
-								
-									<tbody id="user-list">
-									    <c:forEach var="livro" items="${livros}">
-										<tr>
-											<td><c:out value="${livro.id}" /></td>
-											<td><c:out value="${livro.nome}" /></td>
-											<td><c:out value="${livro.valor}" /></td>
-											<td><c:out value="${livro.autor}" /></td>
-											<td><c:out value="${livro.ISBN}" /></td>
-											<td><c:out value="${livro.quantidade}" /></td>
-											<td></td>
-											
-											<td><a class="btn btn-success" href="/projetoweb/livros/${livro.id }">
-													Editar</a></td>
-													
-											<td>
-											<form action="/projetoweb/livros" method="POST">
-											<input type="hidden" name="_method" value="DELETE"><input
-												type="hidden" name="id" value="${livro.id}" /> <input onclick="return confirm('Tem certeza de que deseja excluir este item?');" class="btn btn-success"
-												value="Excluir" type="submit" /> </form> </td> 
-										</tr>
-									</c:forEach>
-									</tbody>
-								
-							</table>
 
-					
+						<table class='table'>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>Valor</th>
+									<th>Autor</th>
+									<th>ISBN</th>
+									<th>Quantidade</th>
+
+									
+									<c:if test="${admin eq true}">
+									<th></th>
+										<th><a href="/projetoweb/livros/cadastrar"
+											class="btn btn-success">Novo</a></th>
+									</c:if>
+								</tr>
+							</thead>
+
+
+							<tbody id="user-list">
+								<c:forEach var="livro" items="${livros}">
+									<tr>
+										<td><c:out value="${livro.id}" /></td>
+										<td><c:out value="${livro.nome}" /></td>
+										<td><c:out value="${livro.valor}" /></td>
+										<td><c:out value="${livro.autor}" /></td>
+										<td><c:out value="${livro.ISBN}" /></td>
+										<td><c:out value="${livro.quantidade}" /></td>
+										<td></td>
+										<c:if test="${admin eq true}">
+											<td><a class="btn btn-success"
+												href="/projetoweb/livros/${livro.id }"> Editar</a></td>
+
+											<td>
+												<form action="/projetoweb/livros" method="POST">
+													<input type="hidden" name="_method" value="DELETE"><input
+														type="hidden" name="id" value="${livro.id}" /> <input
+														onclick="return confirm('Tem certeza de que deseja excluir este item?');"
+														class="btn btn-success" value="Excluir" type="submit" />
+												</form>
+											</td>
+										</c:if>
+
+									</tr>
+								</c:forEach>
+							</tbody>
+
+						</table>
+
+
 
 					</div>
 				</div>
