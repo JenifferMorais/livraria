@@ -32,7 +32,7 @@
 <script>
 function imgError(image) {
     image.onerror = "";
-    image.src = "/projetoweb/images/books/livro.png";
+    image.src = "/projetoweb/images/users/usuario.png";
     return true;
 }
 </script>
@@ -63,8 +63,8 @@ function imgError(image) {
                         </form>
                     </li>
                     <li>
-                        <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/hritik.jpg" alt="user-img" width="36"
-                                class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
+                        <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
+                                width="36" class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
                     </li>
                 </ul>
             </div>
@@ -119,7 +119,7 @@ function imgError(image) {
                         <div class="user-bg"> <img width="100%" alt="user" src="/projetoweb/images/large/img1.jpg">
                             <div class="overlay-box">
                                 <div class="user-content">
-                                    <a href="javascript:void(0)"><img src="/projetoweb/images/books/${livro.imagem}" onerror="imgError(this);"
+                                    <a href="javascript:void(0)"><img src="/projetoweb/images/books/livro.png"
                                             class="thumb-lg" alt="img"></a>
                                     <h4 class="text-white"></h4>
                                     

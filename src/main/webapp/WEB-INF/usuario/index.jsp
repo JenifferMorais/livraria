@@ -122,7 +122,7 @@ function imgError(image) {
 
 			<div class='col-sm-8 col-md-8'>
 
-
+				<c:if test="${admin eq true}">
 				<table class='table'>
 					<thead>
 						<tr>
@@ -169,7 +169,7 @@ function imgError(image) {
 					</tbody>
 
 				</table>
-
+			</c:if>
 
 
 			</div>

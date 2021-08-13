@@ -32,6 +32,11 @@ function imgError(image) {
     image.src = "/projetoweb/images/books/livro.png";
     return true;
 }
+function user(image) {
+	image.onerror = "";
+	image.src = "/projetoweb/images/users/usuario.png";
+	return true;
+}
 </script>
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,7 +77,7 @@ function imgError(image) {
 						</form>
 					</li>
 					<li class="menu-container"><a class="profile-pic" href="#">
-							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
+							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
@@ -137,7 +142,7 @@ function imgError(image) {
 									<h4 class="tm-gallery-title">${livro.nome}</h4>
 									<p class="tm-gallery-description">Por ${livro.autor}</p>
 									<p class="tm-gallery-price"> $${livro.valor}</p>
-									<a class="btn btn-success" href="">Saiba mais</a>
+									<a class="btn btn-success" href="/projetoweb/livros/detalhes/${livro.id}">Saiba mais</a>
 								</figcaption>
 								<br>
 							</figure>

@@ -37,4 +37,8 @@ public class Router extends HttpServlet {
 	public static void home(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/livro/home.jsp").forward(request, response);
 	}
+	
+	public static void detalhes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/livro/detalhes.jsp").forward(request, response);
+	}
 }

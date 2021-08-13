@@ -28,19 +28,22 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
-		Integer admin = Sessao.getUsuarioId(request);
+		Integer ids = Sessao.getUsuarioId(request);
 		String pathInfo = request.getPathInfo();
 
 		if (pathInfo == null || pathInfo.equals("/")) {
 
-			if (usuarioDAO.isAdmin(admin)) {
+			
 				try {
 					usuarios = usuarioDAO.listarUsuario();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+				if (ids != null) {
+					request.setAttribute("admin", usuarioDAO.isAdmin(ids));
+				}
 				request.setAttribute("usuarios", usuarios);
-			}
+			
 			Router.listar(request, response);
 			return;
 		}
@@ -59,7 +62,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		
 		if(splits[1].matches("perfil")) {
 			
-			response.sendRedirect("/projetoweb/usuario/"+admin);
+			response.sendRedirect("/projetoweb/usuario/"+ids);
 			return;
 		}
 

@@ -50,7 +50,7 @@ public class LivroController extends ProjectHttpServlet {
 
 		String[] splits = pathInfo.split("/");
 
-		if (splits.length != 2) {
+		if (splits.length < 2) {
 			return;
 		}
 
@@ -72,6 +72,20 @@ public class LivroController extends ProjectHttpServlet {
 			request.setAttribute("livros", livros);
 			Router.home(request, response);
 			return;
+		}
+
+		if (splits[1].matches("detalhes")) {
+
+			int idLivro = Integer.parseInt(splits[2]);
+			try {
+				Livro detalhes = livroDAO.buscarLivro(idLivro);
+				request.setAttribute("livro", detalhes);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			Router.detalhes(request, response);
+			return;
+
 		}
 
 		int id = Integer.parseInt(splits[1]);

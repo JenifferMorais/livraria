@@ -37,6 +37,11 @@ function imgError(image) {
     image.src = "/projetoweb/images/books/livro.png";
     return true;
 }
+function user(image) {
+	image.onerror = "";
+	image.src = "/projetoweb/images/users/usuario.png";
+	return true;
+}
 </script>
 
 </head>
@@ -66,8 +71,8 @@ function imgError(image) {
                         </form>
                     </li>
                     <li class="menu-container"><a class="profile-pic" href="#">
-							<img src="/projetoweb/images/users/hritik.jpg" alt="user-img"
-							width="36" class=" "><b class="hidden-xs"><c:out
+							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
+							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
 						<div class="menu-body">

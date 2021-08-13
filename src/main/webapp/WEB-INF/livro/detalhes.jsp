@@ -4,12 +4,12 @@
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <title>MyBooks</title>
 <link rel="canonical"
 	href="https://www.wrappixel.com/templates/myadmin-lite/" />
+
 
 <link rel="icon" type="image/png" sizes="16x16"
 	href="/projetoweb/images/favicon.png">
@@ -22,27 +22,30 @@
 	href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css"
 	rel="stylesheet">
 
+
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
 
 <script>
-function imgError(image) {
-    image.onerror = "";
-    image.src = "/projetoweb/images/users/usuario.png";
-    return true;
-}
+	function imgError(image) {
+		image.onerror = "";
+		image.src = "/projetoweb/images/books/livro.png";
+		return true;
+	}
+	
+	function user(image) {
+		image.onerror = "";
+		image.src = "/projetoweb/images/users/usuario.png";
+		return true;
+	}
 </script>
-
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 </head>
-
-
 
 <body>
 	<!-- Preloader -->
@@ -75,7 +78,7 @@ function imgError(image) {
 						</form>
 					</li>
 					<li class="menu-container"><a class="profile-pic" href="#">
-							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
+							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
@@ -106,10 +109,9 @@ function imgError(image) {
 						</div>
 
 					</li>
-					<li><a href="/projetoweb/usuario" class="waves-effect">Gerenciar
-							Usuários</a></li>
-					<li><a href="/projetoweb/livros" class="waves-effect"></i>Gerenciar
-							Livros</a></li>
+					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros</a></li>
+					<li><a href="/projetoweb/usuario/perfil" class="waves-effect">Gerenciar
+							Perfil</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
@@ -123,78 +125,90 @@ function imgError(image) {
 		<div id="page-wrapper">
 			<div class="container-fluid">
 				<div class="row bg-title">
-					<div class="col-lg-12">
-						<h4 class="page-title">Gerenciar livros</h4>
-						<ol class="breadcrumb">
-							<li><a href="#">Dashboard</a></li>
-							<li class="active">Livro</li>
-						</ol>
-					</div>
+					<div class="col-lg-12"></div>
 					<!-- /.col-lg-12 -->
 				</div>
 				<!-- row -->
-
 				<div class="row">
+					<form class="form-horizontal form-material" method="post"
+						action="/projetoweb/livros/update">
+						<div class="col-md-4 col-xs-12">
+							<div class="white-box">
+								<div class="user-bg">
+									<img width="100%" alt="user"
+										src="/projetoweb/images/large/img1.jpg">
+									<div class="overlay-box">
+										<div class="user-content">
+											<a href="javascript:void(0)"><img
+												src="/projetoweb/images/books/${livro.imagem}.jpg"
+												onerror="imgError(this);" class="thumb-lg  " alt="img"></a>
+											<h4 class="text-white">${livro.nome}</h4>
+											<h5 class="text-white">${livro.autor}</h5>
 
-					<div class='col-sm-8 col-md-8'>
+										</div>
+									</div>
+								</div>
+								<div class="user-btm-box">
+									<label class="col-md-12">Imagem</label>
+									<div class="col-md-12">
+										${livro.imagem}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-xs-12">
+							<div class="white-box">
 
-						<table class='table'>
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Nome</th>
-									<th>Valor</th>
-									<th>Autor</th>
-									<th>ISBN</th>
-									<th>Quantidade</th>
+								<div class="form-group">
+									<label class="col-md-12">Nome</label>
+									<div class="col-md-12">
+										${livro.nome}
+									</div>
+								</div>
 
-									
-									<c:if test="${admin eq true}">
-									<th></th>
-										<th><a href="/projetoweb/livros/cadastrar"
-											class="btn btn-success">Novo</a></th>
-									</c:if>
-								</tr>
-							</thead>
+								<div class="form-group">
+									<label class="col-md-12">Autor</label>
+									<div class="col-md-12">
+										${livro.autor}
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-12">Valor</label>
+									<div class="col-md-12">
+										${livro.valor}
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-12">Descrição</label>
+									<div class="col-md-12">
+										${livro.descricao}
+									</div>
+								</div>
 
+								<div class="form-group">
+									<label class="col-md-12">ISBN</label>
+									<div class="col-md-12">
+										${livro.ISBN}
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<div class="col-sm-12">
 
-							<tbody id="user-list">
-								<c:forEach var="livro" items="${livros}">
-									<tr>
-										<td><c:out value="${livro.id}" /></td>
-										<td><c:out value="${livro.nome}" /></td>
-										<td><c:out value="${livro.valor}" /></td>
-										<td><c:out value="${livro.autor}" /></td>
-										<td><c:out value="${livro.ISBN}" /></td>
-										<td><c:out value="${livro.quantidade}" /></td>
-										<td></td>
-										<c:if test="${admin eq true}">
-											<td><a class="btn btn-success"
-												href="/projetoweb/livros/${livro.id }"> Editar</a></td>
+										<button
+											onclick="return confirm('Deseja confirmar as alterações?');"
+											class="btn btn-success" type="submit">Atualizar</button>
+									</div>
+								</div>
 
-											<td>
-												<form action="/projetoweb/livros" method="POST">
-													<input type="hidden" name="_method" value="DELETE"><input
-														type="hidden" name="id" value="${livro.id}" /> <input
-														onclick="return confirm('Tem certeza de que deseja excluir este item?');"
-														class="btn btn-success" value="Excluir" type="submit" />
-												</form>
-											</td>
-										</c:if>
-
-									</tr>
-								</c:forEach>
-							</tbody>
-
-						</table>
-
-
-
-					</div>
+							</div>
+						</div>
+					</form>
 				</div>
+				<!-- /.container-fluid -->
 			</div>
-			<!-- /.container-fluid -->
 		</div>
+
 		<!-- /#page-wrapper -->
 		<footer class="footer text-center">
 			2020 &copy; Myadmin brought to you by <a
