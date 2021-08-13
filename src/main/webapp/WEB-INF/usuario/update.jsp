@@ -63,7 +63,7 @@ function imgError(image) {
                             <a href=""><i class="ti-search"></i></a>
                         </form>
                     </li>
-                    <li class="menu-container"><a class="profile-pic" href="#">
+                    <li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
 							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
@@ -92,10 +92,13 @@ function imgError(image) {
                             </span>
                         </div>
                     </li>
-                  
+                  <c:if test="${admin eq true}">
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários</a></li>
 					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
-                   
+                   </c:if>
+                   <c:if test="${admin != true}">
+                   <li><a href="/projetoweb/livros/home" class="waves-effect">Livros</a></li>
+                   </c:if>
                 </ul>
                 <div class="center p-20">
                     <span class="hide-menu"><a href="http://wrappixel.com/templates/myadmin/" target="_blank"

@@ -63,7 +63,7 @@ function imgError(image) {
                         </form>
                     </li>
                     <li>
-                        <a class="profile-pic" href="#"> <img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
+                        <a class="profile-pic" href="/projetoweb/usuario/perfil"> <img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
                                 width="36" class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
                     </li>
                 </ul>

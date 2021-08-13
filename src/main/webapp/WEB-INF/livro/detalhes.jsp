@@ -77,7 +77,7 @@
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-					<li class="menu-container"><a class="profile-pic" href="#">
+					<li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
 							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>

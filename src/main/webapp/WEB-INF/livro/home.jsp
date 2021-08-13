@@ -76,7 +76,7 @@ function user(image) {
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-					<li class="menu-container"><a class="profile-pic" href="#">
+					<li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
 							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
@@ -109,12 +109,12 @@ function user(image) {
 
 					</li>
 					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros</a></li>
-					<li><a href="/projetoweb/usuario/perfil" class="waves-effect">Gerenciar Perfil</a></li>
+					
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
-						href="http://wrappixel.com/templates/myadmin/" target="_blank"
-						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home</a></span>
+						href="#" target="_blank"
+						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Carrinho</a></span>
 				</div>
 			</div>
 			<!-- /.sidebar-collapse -->

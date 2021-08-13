@@ -61,8 +61,12 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		}
 		
 		if(splits[1].matches("perfil")) {
-			
-			response.sendRedirect("/projetoweb/usuario/"+ids);
+			if(ids != null) {
+				response.sendRedirect("/projetoweb/usuario/"+ids);
+			}
+			else {
+				response.sendRedirect("/projetoweb/usuario/logar");
+			}
 			return;
 		}
 
