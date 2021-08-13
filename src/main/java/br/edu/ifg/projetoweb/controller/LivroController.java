@@ -64,6 +64,12 @@ public class LivroController extends ProjectHttpServlet {
 		}
 
 		if (splits[1].matches("home")) {
+			try {
+				livros = livroDAO.listarLivros();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			request.setAttribute("livros", livros);
 			Router.home(request, response);
 			return;
 		}

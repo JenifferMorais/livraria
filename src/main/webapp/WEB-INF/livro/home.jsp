@@ -26,6 +26,13 @@
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
 
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/books/livro.png";
+    return true;
+}
+</script>
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -49,7 +56,7 @@
 					data-target=".navbar-collapse"><i class="ti-menu"></i></a>
 				<div class="top-left-part">
 					<a class="logo" href="/projetoweb/livros/home"><i
-						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
+						class="glyphicon glyphicon-book"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
 				</div>
 				<ul class="nav navbar-top-links navbar-left hidden-xs">
 					<li><a href="javascript:void(0)"
@@ -97,6 +104,7 @@
 
 					</li>
 					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros</a></li>
+					<li><a href="/projetoweb/usuario/perfil" class="waves-effect">Gerenciar Perfil</a></li>
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
@@ -119,55 +127,22 @@
 				<div class="row tm-gallery">
 					<!-- gallery page 1 -->
 					<div class="tm-gallery-page">
+					
+					<c:forEach var="livro" items="${livros}">
 						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 							<figure>
-								<img src="/projetoweb/images/books/livro.png" alt="Image"
+								<img src="/projetoweb/images/books/${livro.imagem}.jpg" onerror="imgError(this);" alt="Image"
 									class="img-fluid tm-gallery-img" />
 								<figcaption>
-									<h4 class="tm-gallery-title">A rainha do nada (Vol. 3 O Povo do Ar)</h4>
-									<p class="tm-gallery-description">Nam in suscipit nisi</p>
-									<p class="tm-gallery-price">$45 / $55</p>
+									<h4 class="tm-gallery-title">${livro.nome}</h4>
+									<p class="tm-gallery-description">Por ${livro.autor}</p>
+									<p class="tm-gallery-price"> $${livro.valor}</p>
 									<a class="btn btn-success" href="">Saiba mais</a>
 								</figcaption>
+								<br>
 							</figure>
 						</article>
-						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-							<figure>
-								<img src="/projetoweb/images/books/nao pare.jpg" alt="Image"
-									class="img-fluid tm-gallery-img" />
-								<figcaption>
-									<h4 class="tm-gallery-title">Não Pare</h4>
-									<p class="tm-gallery-description">Por Fml Pepper</p>
-									<p class="tm-gallery-price">$45 / $55</p>
-									<a class="btn btn-success" href="">Saiba mais</a>
-								</figcaption>
-							</figure>
-						</article>
-						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-							<figure>
-								<img src="/projetoweb/images/books/livro.png" alt="Image"
-									class="img-fluid tm-gallery-img" />
-								<figcaption>
-									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
-									<p class="tm-gallery-description">Nam in suscipit nisi</p>
-									<p class="tm-gallery-price">$45 / $55</p>
-									<a class="btn btn-success" href="">Saiba mais</a>
-								</figcaption>
-							</figure>
-						</article>
-						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-							<figure>
-								<img src="/projetoweb/images/books/livro.png" alt="Image"
-									class="img-fluid tm-gallery-img" />
-								<figcaption>
-									<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
-									<p class="tm-gallery-description">Nam in suscipit nisi</p>
-									<p class="tm-gallery-price">$45 / $55</p>
-									
-								</figcaption>
-								<a class="btn btn-success" href="">Saiba mais</a>
-							</figure>
-						</article>
+						</c:forEach>
 					</div>
 					<!-- gallery page 1 -->
 

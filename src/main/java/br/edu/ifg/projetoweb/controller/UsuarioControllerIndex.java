@@ -56,6 +56,12 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			return;
 
 		}
+		
+		if(splits[1].matches("perfil")) {
+			
+			response.sendRedirect("/projetoweb/usuario/"+admin);
+			return;
+		}
 
 		if (splits[1].matches("logoff")) {
 			request.getSession().invalidate();
@@ -65,9 +71,12 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		String nomeUsuario = Sessao.getUsuarioNome(request);
 		request.setAttribute("nomeUsuario", nomeUsuario);
-
-		int idUsuario = Sessao.getUsuarioId(request);
+		
+		String imgUsuario = Sessao.getUsuarioImagem(request);
+		request.setAttribute("imgUsuario", imgUsuario);
+		
 	
+		int idUsuario = Sessao.getUsuarioId(request);
 
 		int id = Integer.parseInt(splits[1]);
 

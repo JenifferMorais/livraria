@@ -47,7 +47,7 @@
 					data-target=".navbar-collapse"><i class="ti-menu"></i></a>
 				<div class="top-left-part">
 					<a class="logo" href="/projetoweb/livros/home"><i
-						class="glyphicon glyphicon-fire"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
+						class="glyphicon glyphicon-book"></i>&nbsp;<span class="hidden-xs">MyBooks</span></a>
 				</div>
 				<ul class="nav navbar-top-links navbar-left hidden-xs">
 					<li><a href="javascript:void(0)"

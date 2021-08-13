@@ -36,7 +36,7 @@ public class UsuarioControllerLogin extends ProjectHttpServlet {
 			request.removeAttribute("connection");
 			
 			if (usuario != null) {
-				Sessao.configure(request, usuario.getId(), usuario.getNome());
+				Sessao.configure(request, usuario.getId(), usuario.getNome(), usuario.getImagem());
 				
 				response.addCookie(new Cookie("usuariologado", usuario.getNome()));
 			    response.sendRedirect("/projetoweb/usuario");
