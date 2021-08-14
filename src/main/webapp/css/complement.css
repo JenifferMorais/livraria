@@ -13,7 +13,7 @@
 .menu-body> div{
 	padding: 8px 20px;
 	background: #ffffff;
-	 
+	text-align:center;
 	width: 100%;
 }
 
@@ -21,6 +21,12 @@
 	list-style: none;
 }
 
+.entrar{
+	padding: 0px 0px;
+	background: #ffffff;
+	text-align:center;
+	width: 100%;
+}
 
 div.figure{
 	height: 308px;

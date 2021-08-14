@@ -83,9 +83,16 @@ function user(image) {
 					</a>
 						<div class="menu-body">
 							<div>
+							<c:if test="${nomeUsuario != null}">
 								<ul>
 									<li><a href="/projetoweb/usuario/logoff">Sair</a></li>
 								</ul>
+								</c:if>
+								<c:if test="${nomeUsuario == null}">
+								<ul class="entrar">
+									<li><a href="/projetoweb/usuario/logar">Entrar</a></li>
+								</ul>
+								</c:if>
 							</div>
 						</div></li>
 				</ul>
@@ -111,7 +118,7 @@ function user(image) {
 					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
 			
 			        <c:if test="${admin eq true}">
-					<li><a href="/projetoweb/livros" class="waves-effect ">Gerenciar Livros</a></li>
+					<li><a href="/projetoweb/livros/#" class="waves-effect ">Gerenciar Livros</a></li>
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
 
                    </c:if> 
