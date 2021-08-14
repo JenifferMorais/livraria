@@ -82,13 +82,10 @@ function imgError(image) {
                                 <button class="btn btn-default" type="button"><i class="ti-search"></i> </button>
                             </span>
                         </div>
-                    </li>
-                  <li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
-			
-			        <c:if test="${admin eq true}">
+                    </li> 
 					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
-                   </c:if>  
+                 
                 </ul>
                 <div class="center p-20">
                     <span class="hide-menu"><a href="/projetoweb/livros/home" 

@@ -222,12 +222,14 @@ p, address {
 .tm-site-title {
   font-size: 2.2rem;
   font-weight: 400;
-  margin-bottom: 5px;
+  
 }
 
 .tm-site-description {
   font-size: 1.1rem;
   font-weight: 400;
+  margin-bottom: 50px;
+  
 }
 
 .tm-nav {
@@ -283,7 +285,7 @@ p, address {
 
 .tm-gallery-page {
   max-width: 280px;
-  margin-left: auto;
+  margin-left: 35px;
   margin-right: auto;
   display: -ms-flexbox;
   display: flex;
@@ -352,13 +354,16 @@ p, address {
 }
 
 .tm-gallery-description {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  
 }
 
 .tm-gallery-price {
   font-size: 1.25rem;
   color: #2F956D;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  padding-bottom: -10px;
+  
 }
 
 .tm-paging-links {

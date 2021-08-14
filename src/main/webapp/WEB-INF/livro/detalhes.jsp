@@ -26,19 +26,26 @@
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
 
+<style type="text/css">
+.row {
+	margin-left: 200px;
+}
+</style>
+
 <script>
 	function imgError(image) {
 		image.onerror = "";
 		image.src = "/projetoweb/images/books/livro.png";
 		return true;
 	}
-	
+
 	function user(image) {
 		image.onerror = "";
 		image.src = "/projetoweb/images/users/usuario.png";
 		return true;
 	}
 </script>
+
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -77,10 +84,11 @@
 							<a href=""><i class="ti-search"></i></a>
 						</form>
 					</li>
-					<li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
-							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="user(this);"
-							width="36" class="img-circle"><b class="hidden-xs"><c:out
-									value="${nomeUsuario}" /></b>
+					<li class="menu-container"><a class="profile-pic"
+						href="/projetoweb/usuario/perfil"> <img
+							src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img"
+							onerror="user(this);" width="36" class="img-circle"><b
+							class="hidden-xs"><c:out value="${nomeUsuario}" /></b>
 					</a>
 						<div class="menu-body">
 							<div>
@@ -109,18 +117,20 @@
 						</div>
 
 					</li>
-					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
-			
-			 <c:if test="${admin eq true}">
-					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
-                    <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
+					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros
+					</a></li>
 
-                   </c:if> 
+					<c:if test="${admin eq true}">
+						<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar
+								Livros</a></li>
+						<li><a href="/projetoweb/usuario" class="waves-effect">
+								Gerenciar Usuários </a></li>
+
+					</c:if>
 				</ul>
 				<div class="center p-20">
-					<span class="hide-menu"><a
-						href="/projetoweb/livros/home" 
-						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home</a></span>
+					<span class="hide-menu"><a href="#" target="_blank"
+						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Carrinho</a></span>
 				</div>
 			</div>
 			<!-- /.sidebar-collapse -->
@@ -136,7 +146,8 @@
 				<div class="row">
 					<form class="form-horizontal form-material" method="post"
 						action="/projetoweb/livros/update">
-						<div class="col-md-4 col-xs-12">
+
+						<div class="col-md-8 col-xs-12">
 							<div class="white-box">
 								<div class="user-bg">
 									<img width="100%" alt="user"
@@ -146,62 +157,46 @@
 											<a href="javascript:void(0)"><img
 												src="/projetoweb/images/books/${livro.imagem}.jpg"
 												onerror="imgError(this);" class="thumb-lg  " alt="img"></a>
-											<h4 class="text-white">${livro.nome}</h4>
-											<h5 class="text-white">${livro.autor}</h5>
+											
 
 										</div>
+										<br>
 									</div>
 								</div>
 								<div class="user-btm-box">
-									<label class="col-md-12">Imagem</label>
-									<div class="col-md-12">
-										${livro.imagem}
-									</div>
-								</div>
+								<h4 class="text-white">${livro.nome}</h4>
+								<h5 class="text-white">${livro.autor}</h5></div>
 							</div>
-						</div>
-						<div class="col-md-8 col-xs-12">
 							<div class="white-box">
 
 								<div class="form-group">
 									<label class="col-md-12">Nome</label>
-									<div class="col-md-12">
-										${livro.nome}
-									</div>
+									<div class="col-md-12">${livro.nome}</div>
 								</div>
 
 								<div class="form-group">
 									<label class="col-md-12">Autor</label>
-									<div class="col-md-12">
-										${livro.autor}
-									</div>
+									<div class="col-md-12">${livro.autor}</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-12">Valor</label>
-									<div class="col-md-12">
-										${livro.valor}
-									</div>
+									<div class="col-md-12">${livro.valor}</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-12">Descrição</label>
-									<div class="col-md-12">
-										${livro.descricao}
-									</div>
+									<div class="col-md-12"><p class="descricao">${livro.descricao}</p></div>
 								</div>
 
 								<div class="form-group">
 									<label class="col-md-12">ISBN</label>
-									<div class="col-md-12">
-										${livro.ISBN}
-									</div>
+									<div class="col-md-12">${livro.ISBN}</div>
 								</div>
-								
+
 								<div class="form-group">
 									<div class="col-sm-12">
-
-										<button
-											onclick="return confirm('Deseja confirmar as alterações?');"
-											class="btn btn-success" type="submit">Atualizar</button>
+										<br>
+										<a class="btn btn-success" href="#" >Adicionar
+											ao carrinho!</a>
 									</div>
 								</div>
 

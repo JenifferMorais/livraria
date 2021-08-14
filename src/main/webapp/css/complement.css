@@ -17,7 +17,31 @@
 	width: 100%;
 }
 
-.menu-body> div ul{	
-	
+.menu-body> div ul{
 	list-style: none;
+}
+
+
+div.figure{
+	height: 308px;
+}
+div.saiba{
+	margin-bottom:25px;
+}
+
+.descricao{
+	text-align: justify;
+}
+.thumb-lg {
+    height: 200px;
+    width: 200px;
+}
+
+.text-white {
+    color: #000000;
+    text-align: center;
+}
+.user-bg .overlay-box .user-content {
+    padding: 0;
+    margin-top: 15px!important;
 }

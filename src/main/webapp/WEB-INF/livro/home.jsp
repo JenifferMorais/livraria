@@ -140,6 +140,8 @@ function user(image) {
 					
 					<c:forEach var="livro" items="${livros}">
 						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<a href="/projetoweb/livros/detalhes/${livro.id}"/>
+						<div class='figure'>
 							<figure>
 								<img src="/projetoweb/images/books/${livro.imagem}.jpg" onerror="imgError(this);" alt="Image"
 									class="img-fluid tm-gallery-img" />
@@ -147,11 +149,17 @@ function user(image) {
 									<h4 class="tm-gallery-title">${livro.nome}</h4>
 									<p class="tm-gallery-description">Por ${livro.autor}</p>
 									<p class="tm-gallery-price"> $${livro.valor}</p>
-									<a class="btn btn-success" href="/projetoweb/livros/detalhes/${livro.id}">Saiba mais</a>
+															
 								</figcaption>
+									
 								<br>
 							</figure>
+							</div>
+							<div class="saiba">
+								<a class="btn btn-success" href="/projetoweb/livros/detalhes/${livro.id}" >Saiba mais</a>
+								</div>	
 						</article>
+						
 						</c:forEach>
 					</div>
 					<!-- gallery page 1 -->
