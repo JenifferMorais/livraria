@@ -24,7 +24,8 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Usuario> usuarios = new ArrayList<>();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 
@@ -33,17 +34,15 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		if (pathInfo == null || pathInfo.equals("/")) {
 
-			
-				try {
-					usuarios = usuarioDAO.listarUsuario();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-				if (ids != null) {
-					request.setAttribute("admin", usuarioDAO.isAdmin(ids));
-				}
-				request.setAttribute("usuarios", usuarios);
-			
+			try {
+				usuarios = usuarioDAO.listarUsuario();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}if (ids != null) {
+				request.setAttribute("admin", usuarioDAO.isAdmin(ids));
+			}
+			request.setAttribute("usuarios", usuarios);
+
 			Router.listar(request, response);
 			return;
 		}
@@ -53,18 +52,20 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		if (splits.length != 2) {
 			return;
 		}
+		
+		if (ids != null) {
+			request.setAttribute("admin", usuarioDAO.isAdmin(ids));
+		}
 
 		if (splits[1].matches("cadastrar")) {
 			Router.cadastrar(request, response);
 			return;
-
 		}
-		
-		if(splits[1].matches("perfil")) {
-			if(ids != null) {
-				response.sendRedirect("/projetoweb/usuario/"+ids);
-			}
-			else {
+
+		if (splits[1].matches("perfil")) {
+			if (ids != null) {
+				response.sendRedirect("/projetoweb/usuario/" + ids);
+			} else {
 				response.sendRedirect("/projetoweb/usuario/logar");
 			}
 			return;
@@ -78,11 +79,10 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		String nomeUsuario = Sessao.getUsuarioNome(request);
 		request.setAttribute("nomeUsuario", nomeUsuario);
-		
+
 		String imgUsuario = Sessao.getUsuarioImagem(request);
 		request.setAttribute("imgUsuario", imgUsuario);
-		
-	
+
 		int idUsuario = Sessao.getUsuarioId(request);
 
 		int id = Integer.parseInt(splits[1]);
@@ -96,6 +96,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
 		} else {
 			response.sendRedirect("/projetoweb/usuario");
 		}
@@ -126,10 +127,13 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		
 
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+		
 
 		Usuario usuario = new Usuario();
 		usuario.setId(Integer.parseInt(request.getParameter("id")));
@@ -152,13 +156,15 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 
 		request.setAttribute("usuarios", usuarios);
 		response.sendRedirect("/projetoweb/usuario");
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		final Connection connection = (Connection) request.getAttribute("connection");
 		final UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
 		final Usuario usuario = new Usuario();

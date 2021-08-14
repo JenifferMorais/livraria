@@ -39,7 +39,7 @@ public class UsuarioControllerLogin extends ProjectHttpServlet {
 				Sessao.configure(request, usuario.getId(), usuario.getNome(), usuario.getImagem());
 				
 				response.addCookie(new Cookie("usuariologado", usuario.getNome()));
-			    response.sendRedirect("/projetoweb/usuario");
+			    response.sendRedirect("/projetoweb/livros/home");
 			}else {
 				 request.setAttribute("erro", "Erro ao logar!");
 				 request.getRequestDispatcher("/WEB-INF/usuario/login.jsp").forward(request, response);

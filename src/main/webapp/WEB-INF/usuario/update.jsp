@@ -100,11 +100,7 @@ function imgError(image) {
 
                    </c:if>  
                 </ul>
-                <div class="center p-20">
-                    <span class="hide-menu"><a href="/projetoweb/livros/home" 
-                            class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home
-                     </a></span>
-                </div>
+               
             </div>
             <!-- /.sidebar-collapse -->
         </div>

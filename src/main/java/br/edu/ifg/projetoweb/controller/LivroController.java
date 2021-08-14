@@ -49,6 +49,11 @@ public class LivroController extends ProjectHttpServlet {
 		}
 
 		String[] splits = pathInfo.split("/");
+		Integer ids = Sessao.getUsuarioId(request);
+		
+		if (ids != null) {
+			request.setAttribute("admin", usuarioDAO.isAdmin(ids));
+		}
 
 		if (splits.length < 2) {
 			return;

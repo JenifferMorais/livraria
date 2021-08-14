@@ -111,7 +111,7 @@ function user(image) {
 					<li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
 			
 			        <c:if test="${admin eq true}">
-					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
+					<li><a href="/projetoweb/livros" class="waves-effect ">Gerenciar Livros</a></li>
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
 
                    </c:if> 

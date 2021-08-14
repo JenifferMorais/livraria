@@ -99,16 +99,11 @@ function user(image) {
                             </span>
                         </div>
                     </li>
-             
+             		<li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
 					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
 
                 </ul>
-                <div class="center p-20">
-                    <span class="hide-menu"><a href="/projetoweb/livros/home"
-                            class="btn btn-info btn-block btn-rounded waves-effect waves-light">Home
-                       </a></span>
-                </div>
             </div>
             <!-- /.sidebar-collapse -->
         </div>
