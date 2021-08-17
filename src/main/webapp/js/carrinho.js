@@ -18,20 +18,12 @@ async function mudarQuantidade(id, quantidade) {
 		const newCarrinho = carrinho.map(item => {
 			if (item.id != id) {
 				return item;
-<<<<<<< Updated upstream
-			} else if(quantidade!=0){
-				return findLivro;
-			}
-		}).filter(item=>!!item);
-=======
 			} else if (quantidade != 0) {
 				return findLivro;
 			}
 		}).filter(item => !!item);
-		carrinho = [...newCarrinho];
->>>>>>> Stashed changes
-		await localStorage.setItem("carrinho", JSON.stringify(newcarrinho));
-		carrinho = [...newcarrinho]
+		carrinho = [...newCarrinho]
+		await localStorage.setItem("carrinho", JSON.stringify(newCarrinho));
 	}
 };
 
