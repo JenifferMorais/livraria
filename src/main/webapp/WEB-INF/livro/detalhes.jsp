@@ -195,7 +195,7 @@
 								<div class="form-group">
 									<div class="col-sm-12">
 										<br>
-										<a class="btn btn-success" href="#" onClick="addCarrinho(${livro.id})">Adicionar
+										<a class="btn btn-success" href="#" onClick="addCarrinho('${livro.id}','${livro.nome}')">Adicionar
 											ao carrinho!</a>
 									</div>
 								</div>

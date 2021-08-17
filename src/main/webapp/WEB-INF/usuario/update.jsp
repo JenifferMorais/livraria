@@ -29,13 +29,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script>
-function imgError(image) {
-    image.onerror = "";
-    image.src = "/projetoweb/images/users/usuario.png";
-    return true;
-}
-</script>
+
 	
 </head>
 
@@ -64,7 +58,7 @@ function imgError(image) {
                         </form>
                     </li>
                     <li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
-							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
+							<img src="/projetoweb/images/users/${usuario.imagem}.jpg" alt="user-img" onerror="imgError(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
@@ -205,6 +199,13 @@ function imgError(image) {
 <script src="/projetoweb/js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="/projetoweb/js/myadmin.js"></script>
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/users/usuario.png";
+    return true;
+}
+</script>
 </body>
 
 </html>

@@ -9,12 +9,11 @@
 <body>
 <table class="carrinhoTable">
 	<thead>
-		<th>
-<td>ID</td>
-<td>Nome</td>
-<td>Quantidade</td>
-<td>Ações</td>
-</th>
+<th>ID</th>
+<th>Nome</th>
+<th>Quantidade</th>
+<th>Ações</th>
+
 	</thead>
 <tbody>
 </tbody>
@@ -22,17 +21,20 @@
 <script src="/projetoweb/js/carrinho.js"></script>
 <script>
 const lista = document.querySelector(".carrinhoTable tbody");
+function carregarTabela(){
+lista.innerHTML="";
 if(carrinho.length){
-	lista.innerHTML="";
+	
 	carrinho.forEach(item=>{
 		let tr = document.createElement("tr");
-		tr.innerHTML= `<td>${item.id}</td><td>${item.quantidade}</td><td>
-		<button type="button" onclick="adicionar(${item.id})"> adicionar</button>
-		<button type="button" onclick="diminuir(${item.id})">diminuir</button></td>`
+		tr.innerHTML= `<td>\${item.id}</td><td>\${item.nome}</td><td>\${item.quantidade}</td><td>
+		<button type="button" onclick="adicionar(\${item.id}); carregarTabela()">adicionar</button>
+		<button type="button" onclick="diminuir(\${item.id}); carregarTabela()">diminuir</button></td>`
 		lista.append(tr);
 	})
 }
-
+}
+carregarTabela();
 </script>
 </body>
 </html>
