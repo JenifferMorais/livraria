@@ -8,20 +8,22 @@
 </head>
 <body>
 <table class="carrinhoTable">
-<th>
+	<thead>
+		<th>
 <td>ID</td>
 <td>Nome</td>
 <td>Quantidade</td>
 <td>Ações</td>
 </th>
-
-
-
+	</thead>
+<tbody>
+</tbody>
 </table>
 <script src="/projetoweb/js/carrinho.js"></script>
 <script>
-const lista = document.querySelector(".carrinhoTable");
-if(carrinho.legth){
+const lista = document.querySelector(".carrinhoTable tbody");
+if(carrinho.length){
+	lista.innerHTML="";
 	carrinho.forEach(item=>{
 		let tr = document.createElement("tr");
 		tr.innerHTML= `<td>${item.id}</td><td>${item.quantidade}</td><td>
