@@ -19,13 +19,12 @@ async function mudarQuantidade(id, quantidade) {
 		const newcarrinho = carrinho.map(item => {
 			if (item.id != id) {
 				return item;
-			} else if(quantidade==0){
-				return null;
-			}else {
+			} else if(quantidade!=0){
 				return findLivro;
 			}
-		});
+		}).filter(item=>!!item);
 		await localStorage.setItem("carrinho", JSON.stringify(newcarrinho));
+		carrinho = [...newcarrinho]
 	}
 };
 

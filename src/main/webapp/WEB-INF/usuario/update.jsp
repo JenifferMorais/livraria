@@ -29,7 +29,13 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/users/usuario.png";
+    return true;
+}
+</script>
 	
 </head>
 
@@ -58,7 +64,7 @@
                         </form>
                     </li>
                     <li class="menu-container"><a class="profile-pic" href="/projetoweb/usuario/perfil">
-							<img src="/projetoweb/images/users/${usuario.imagem}.jpg" alt="user-img" onerror="imgError(this);"
+							<img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
 							width="36" class="img-circle"><b class="hidden-xs"><c:out
 									value="${nomeUsuario}" /></b>
 					</a>
@@ -121,7 +127,7 @@
                         <div class="user-bg"> <img width="100%" alt="user" src="/projetoweb/images/large/img1.jpg">
                             <div class="overlay-box">
                                 <div class="user-content">
-                                    <a href="javascript:void(0)"><img src="/projetoweb/images/users/${imgUsuario}.jpg" onerror="imgError(this);"
+                                    <a href="javascript:void(0)"><img src="/projetoweb/images/users/${usuario.imagem}.jpg" onerror="imgError(this);"
                                             class="thumb-lg img-circle" alt="img"></a>
                                     <h4 class="text-white">${usuario.nome}</h4>
                                     <h5 class="text-white">${usuario.email}</h5>
@@ -199,13 +205,7 @@
 <script src="/projetoweb/js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="/projetoweb/js/myadmin.js"></script>
-<script>
-function imgError(image) {
-    image.onerror = "";
-    image.src = "/projetoweb/images/users/usuario.png";
-    return true;
-}
-</script>
+
 </body>
 
 </html>
