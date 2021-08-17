@@ -198,6 +198,10 @@ function user(image) {
 	<!-- Custom Theme JavaScript -->
 	<script src="/projetoweb/js/myadmin.js"></script>
 	<script src="/projetoweb/js/function.js"></script>
+	
+	<scrip>
+	
+	</scrip>
 </body>
 
 </html>

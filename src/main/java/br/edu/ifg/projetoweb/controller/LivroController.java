@@ -92,6 +92,12 @@ public class LivroController extends ProjectHttpServlet {
 			return;
 
 		}
+		
+		if(splits[1].matches("carrinho")) {
+			
+			Router.carrinho(request, response);
+			return;
+		}
 
 		int id = Integer.parseInt(splits[1]);
 
@@ -161,7 +167,8 @@ public class LivroController extends ProjectHttpServlet {
 		}
 
 		request.setAttribute("livros", livros);
-		Router.listarLivros(request, response);
+		response.sendRedirect("/projetoweb/livros");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

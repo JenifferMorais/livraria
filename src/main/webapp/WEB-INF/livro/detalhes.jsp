@@ -21,7 +21,7 @@
 <link
 	href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css"
 	rel="stylesheet">
-
+	
 
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
@@ -195,7 +195,7 @@
 								<div class="form-group">
 									<div class="col-sm-12">
 										<br>
-										<a class="btn btn-success" href="#" >Adicionar
+										<a class="btn btn-success" href="#" onClick="addCarrinho(${livro.id})">Adicionar
 											ao carrinho!</a>
 									</div>
 								</div>
@@ -230,6 +230,7 @@
 	<!-- Custom Theme JavaScript -->
 	<script src="/projetoweb/js/myadmin.js"></script>
 	<script src="/projetoweb/js/function.js"></script>
+	<script src="/projetoweb/js/carrinho.js"></script>
 </body>
 
 </html>

@@ -123,7 +123,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		}
 
 		request.setAttribute("usuarios", usuarios);
-		Router.listar(request, response);
+		response.sendRedirect("/projetoweb/usuario");
 
 	}
 
@@ -133,7 +133,7 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 
 		Connection connection = (Connection) request.getAttribute("connection");
 		UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
-		
+		Integer idUsuario = Sessao.getUsuarioId(request);
 
 		Usuario usuario = new Usuario();
 		usuario.setId(Integer.parseInt(request.getParameter("id")));
@@ -159,7 +159,11 @@ public class UsuarioControllerIndex extends ProjectHttpServlet {
 		
 
 		request.setAttribute("usuarios", usuarios);
+		if(usuarioDAO.isAdmin(idUsuario)) {
 		response.sendRedirect("/projetoweb/usuario");
+		}else {
+		response.sendRedirect("/projetoweb/livros/home");
+		}
 
 	}
 
