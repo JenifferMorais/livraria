@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter({ "/usuari*", "/livr*" })
+@WebFilter({ "/usuario/*", "/livros/*" })
 public class FiltrarAcento implements Filter {
 
 	public void init(FilterConfig config) throws ServletException {
@@ -22,6 +22,7 @@ public class FiltrarAcento implements Filter {
 			throws IOException, ServletException {
 		// Respect the client-specified character encoding
 		// (see HTTP specification section 3.4.1)
+
 		request.setCharacterEncoding("UTF-8");
 
 		// Set the default response content type and encoding

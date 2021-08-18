@@ -50,7 +50,7 @@ public class LivroController extends ProjectHttpServlet {
 
 		String[] splits = pathInfo.split("/");
 		Integer ids = Sessao.getUsuarioId(request);
-		
+
 		if (ids != null) {
 			request.setAttribute("admin", usuarioDAO.isAdmin(ids));
 		}
@@ -92,9 +92,9 @@ public class LivroController extends ProjectHttpServlet {
 			return;
 
 		}
-		
+
 		if(splits[1].matches("carrinho")) {
-			
+
 			Router.carrinho(request, response);
 			return;
 		}
@@ -168,7 +168,7 @@ public class LivroController extends ProjectHttpServlet {
 
 		request.setAttribute("livros", livros);
 		response.sendRedirect("/projetoweb/livros");
-		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

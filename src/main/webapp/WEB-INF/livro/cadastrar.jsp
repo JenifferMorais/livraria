@@ -15,13 +15,13 @@
     <meta name="robots" content="noindex,nofollow">
     <title>MyBooks</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/myadmin-lite/" />
-    
+
     <link rel="icon" type="image/png" sizes="16x16" href="/projetoweb/images/favicon.png">
-    
+
     <link href="/projetoweb/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link href="/projetoweb/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-   
+
     <link href="/projetoweb/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,18 +76,18 @@
                                 <button class="btn btn-default" type="button"><i class="ti-search"></i> </button>
                             </span>
                         </div>
-                    </li> 
+                    </li>
                     <li><a href="/projetoweb/livros/home" class="waves-effect">Livros </a></li>
 					<li><a href="/projetoweb/livros" class="waves-effect">Gerenciar Livros</a></li>
                     <li><a href="/projetoweb/usuario" class="waves-effect"> Gerenciar Usuários </a></li>
-                 
+
                 </ul>
-                
+
             </div>
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.sidebar-collapse -->
-    
+
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -112,12 +112,12 @@
                                     <a href="javascript:void(0)"><img src="/projetoweb/images/books/livro.png"
                                             class="thumb-lg" alt="img"></a>
                                     <h4 class="text-white"></h4>
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <div class="user-btm-box">
-                        
+
                             <label class="col-md-12">Imagem</label>
                                 <div class="col-md-12">
                                     <input type="text" name="imagem" data-ls-module="charCounter" maxlength="100"
@@ -127,14 +127,14 @@
                 </div>
                 <div class="col-md-8 col-xs-12">
                     <div class="white-box">
-                             
+
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
                                     <input type="text" name="nome" data-ls-module="charCounter" maxlength="100"
                                         class="form-control form-control-line"> </div>
                             </div>
-               
+
                             <div class="form-group">
                                 <label class="col-md-12">Autor</label>
                                 <div class="col-md-12">
@@ -144,7 +144,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Valor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="valor" 
+                                    <input type="text" name="valor"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
@@ -153,7 +153,7 @@
                                     <textarea rows="5" name="descricao"  class="form-control form-control-line"></textarea>
                                 </div>
                             </div>
-                           
+
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
@@ -166,15 +166,15 @@
                                     <input type="text"  name="quantidade" data-ls-module="charCounter" maxlength="9"
                                         class="form-control form-control-line"> </div>
                             </div>
-                            
-                           
+
+
                             <div class="form-group">
                                 <div class="col-sm-12">
-                              
+
                                     <button class="btn btn-success" type="submit">Cadastrar</button>
                                 </div>
                             </div>
-                        
+
                     </div>
                 </div>
                 </form>
