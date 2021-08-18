@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter({ "/usuario/*", "/livro/*" })
+@WebFilter({ "/usuari*", "/livr*" })
 public class FiltrarAcento implements Filter {
 
 	public void init(FilterConfig config) throws ServletException {
