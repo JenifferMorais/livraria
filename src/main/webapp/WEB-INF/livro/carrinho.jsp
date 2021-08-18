@@ -151,7 +151,7 @@
 
 					<div class='col-sm-8 col-md-8'>
 
-						<table class="table">
+						<table class="carrinho">
 							<thead>
 								<th>ID</th>
 								<th>Nome</th>
@@ -193,7 +193,7 @@
 	<script src="/projetoweb/js/function.js"></script>
 	<script src="/projetoweb/js/carrinho.js"></script>
 	<script>
-const lista = document.querySelector(".table tbody");
+const lista = document.querySelector("table.carrinho tbody");
 function carregarTabela(){
 lista.innerHTML="";
 if(carrinho.length){
