@@ -125,7 +125,7 @@ function user(image) {
 				</ul>
 				<div class="center p-20">
 					<span class="hide-menu"><a
-						href="#" target="_blank"
+						href="/projetoweb/livros/carrinho" 
 						class="btn btn-info btn-block btn-rounded waves-effect waves-light">Carrinho</a></span>
 				</div>
 			</div>

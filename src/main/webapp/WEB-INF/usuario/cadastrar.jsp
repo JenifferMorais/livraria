@@ -31,22 +31,22 @@
 							<h3 class="text-center text-info">Registrar-se</h3>
 							<div class="form-group">
 								<label for="username" class="text-info">Nome:</label><br>
-								<input data-ls-module="charCounter" maxlength="100" type="text" name="nome" id="nome"
+								<input data-ls-module="charCounter" maxlength="100" type="text" name="nome" id="nome" required="required"
 									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for="telefone" class="text-info">Telefone:</label><br>
-								<input type="text" data-ls-module="charCounter" maxlength="11" name="telefone" id="telefone"
+								<input type="text" data-ls-module="charCounter" maxlength="11" name="telefone" id="telefone" required="required"
 									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for="username" class="text-info">Email:</label><br>
-								<input data-ls-module="charCounter" maxlength="100" type="email" name="email" id="email"
+								<input data-ls-module="charCounter" maxlength="100" type="email" name="email" id="email" required="required"
 									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for="password" class="text-info">Senha:</label><br>
-								<input data-ls-module="charCounter" maxlength="100" type="password" name="password" id="password"
+								<input data-ls-module="charCounter" maxlength="100" type="password" name="password" id="password" required="required"
 									class="form-control">
 							</div>
 							<div class="form-group">

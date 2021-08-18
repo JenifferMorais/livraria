@@ -137,7 +137,7 @@ function imgError(image) {
                         <div class="user-btm-box">
                             <label class="col-md-12">Imagem</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="imagem" value="${usuario.imagem}" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="imagem" value="${usuario.imagem}" data-ls-module="charCounter" maxlength="50"
                                         class="form-control form-control-line"> </div>
                         </div>
                     </div>
@@ -148,26 +148,27 @@ function imgError(image) {
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
-                                    <input type="text" value="${usuario.nome}" name="nome" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" value="${usuario.nome}" name="nome" data-ls-module="charCounter" maxlength="100" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label for="example-email" class="col-md-12">Email</label>
                                 <div class="col-md-12">
-                                    <input type="email" value="${usuario.email}" data-ls-module="charCounter" maxlength="100"
+                                    <input type="email" value="${usuario.email}" data-ls-module="charCounter" maxlength="100" required="required"
                                         class="form-control form-control-line" name="email" id="example-email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Password</label>
                                 <div class="col-md-12">
-                                    <input type="password" value="${usuario.password}" name="password" data-ls-module="charCounter" maxlength="100" class="form-control form-control-line">
+                                    <input type="password" value="${usuario.password}" name="password" data-ls-module="charCounter" maxlength="100" 
+                                     class="form-control form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Telefone</label>
                                 <div class="col-md-12">
-                                    <input type="text" value="${usuario.telefone}" name="telefone" data-ls-module="charCounter" maxlength="11"
+                                    <input type="text" value="${usuario.telefone}" name="telefone" data-ls-module="charCounter" maxlength="11" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
                             

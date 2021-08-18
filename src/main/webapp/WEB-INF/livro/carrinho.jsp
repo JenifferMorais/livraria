@@ -121,7 +121,7 @@
         </c:if>
       </ul>
       <div class="center p-20">
-					<span class="hide-menu"><a href="#" target="_blank"
+					<span class="hide-menu"><a href="/projetoweb/livros/carrinho" 
                                      class="btn btn-info btn-block btn-rounded waves-effect waves-light">Carrinho</a></span>
       </div>
     </div>
@@ -152,7 +152,8 @@
             <tbody>
             </tbody>
           </table>
-
+			<br>
+			<button id="but" onclick="return confirm('Deseja confirmar compra?');" class="btn btn-success noDisplay" type="submit">Comprar</button>
         </div>
       </div>
 
@@ -192,6 +193,12 @@
 <button type="button" onclick="diminuir(\${item.id}); carregarTabela()">-</button></td>`
         lista.append(tr);
       })
+      let dtn = document.querySelector("button.noDisplay");
+      dtn.classList.remove("noDisplay");
+    }else{
+    	lista.append("Carrinho vazio!");
+    	let dtn = document.querySelector("button#but");
+        dtn.classList.add("noDisplay");
     }
   }
 

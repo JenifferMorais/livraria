@@ -141,7 +141,7 @@ function user(image) {
                         <div class="user-btm-box">
                             <label class="col-md-12">Imagem</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="imagem" value="${livro.imagem}" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="imagem" value="${livro.imagem}" data-ls-module="charCounter" maxlength="50"
                                         class="form-control form-control-line"> </div>
                         </div>
                     </div>
@@ -152,39 +152,40 @@ function user(image) {
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="nome" value="${livro.nome}" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="nome" value="${livro.nome}" data-ls-module="charCounter" maxlength="100" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
                
                             <div class="form-group">
                                 <label class="col-md-12">Autor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="autor"  value="${livro.autor}" data-ls-module="charCounter" maxlength="100" class="form-control form-control-line">
+                                    <input type="text" name="autor"  value="${livro.autor}" data-ls-module="charCounter" maxlength="100" required="required"
+                                    class="form-control form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Valor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="valor" value="${livro.valor}" 
+                                    <input type="text" name="valor" value="${livro.valor}" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Descrição</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" name="descricao"  class="form-control form-control-line">${livro.descricao}</textarea>
+                                    <textarea rows="5" name="descricao"  required="required" class="form-control form-control-line">${livro.descricao}</textarea>
                                 </div>
                             </div>
                            
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="isbn" value="${livro.ISBN}" data-ls-module="charCounter" maxlength="25"
+                                    <input type="text" name="isbn" value="${livro.ISBN}" required="required" data-ls-module="charCounter" maxlength="25"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Quantidade</label>
                                 <div class="col-md-12">
-                                    <input type="text"  name="quantidade" value="${livro.quantidade}" data-ls-module="charCounter" maxlength="9"
+                                    <input type="text"  name="quantidade" value="${livro.quantidade}" required="required" data-ls-module="charCounter" maxlength="9"
                                         class="form-control form-control-line"> </div>
                             </div>
                             

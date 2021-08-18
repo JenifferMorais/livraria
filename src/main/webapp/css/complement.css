@@ -51,3 +51,7 @@ div.saiba{
     padding: 0;
     margin-top: 15px!important;
 }
+
+.noDisplay{
+	display:none;
+}

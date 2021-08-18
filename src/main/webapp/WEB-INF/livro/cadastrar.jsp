@@ -120,7 +120,7 @@
 
                             <label class="col-md-12">Imagem</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="imagem" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="imagem" data-ls-module="charCounter" maxlength="50"
                                         class="form-control form-control-line"> </div>
                         </div>
                     </div>
@@ -131,39 +131,39 @@
                             <div class="form-group">
                                 <label class="col-md-12">Nome</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="nome" data-ls-module="charCounter" maxlength="100"
+                                    <input type="text" name="nome" data-ls-module="charCounter" maxlength="100" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-12">Autor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="autor" data-ls-module="charCounter" maxlength="100" class="form-control form-control-line">
+                                    <input type="text" name="autor" data-ls-module="charCounter" maxlength="100" required="required" class="form-control form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Valor</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="valor"
+                                    <input type="text" name="valor" required="required"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Descrição</label>
                                 <div class="col-md-12">
-                                    <textarea rows="5" name="descricao"  class="form-control form-control-line"></textarea>
+                                    <textarea rows="5" name="descricao" required="required" class="form-control form-control-line"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-12">ISBN</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="isbn" data-ls-module="charCounter" maxlength="25"
+                                    <input type="text" name="isbn" required="required" data-ls-module="charCounter" maxlength="25"
                                         class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Quantidade</label>
                                 <div class="col-md-12">
-                                    <input type="text"  name="quantidade" data-ls-module="charCounter" maxlength="9"
+                                    <input type="text" name="quantidade" required="required" data-ls-module="charCounter" maxlength="9"
                                         class="form-control form-control-line"> </div>
                             </div>
 

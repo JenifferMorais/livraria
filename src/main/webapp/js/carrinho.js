@@ -3,7 +3,7 @@ let carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
 async function addCarrinho(id, nome) {
 	const findLivro = carrinho.find(item => item.id == id);
 	if (!findLivro) {
-		alert("Produto adicionado!");
+		
 		carrinho.push({ id, quantidade: 1, nome });
 		alert("Produto adicionado!");
 	} else {
@@ -42,8 +42,12 @@ async function diminuir(id) {
 	}
 };
 
+<button id="but" onclick="return confirm('Deseja confirmar compra?');" class="btn btn-success noDisplay" type="submit">Comprar</button>
+
+async function limpar(){
 
 
+}
 
 
 
