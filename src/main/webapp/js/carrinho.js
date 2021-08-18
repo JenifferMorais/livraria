@@ -42,4 +42,11 @@ async function diminuir(id) {
 	}
 };
 
+  let sair = document.querySelector("a.sair");
+ 	 sair.addEventListener('click', function(){
+	  carrinho = []
+	  localStorage.removeItem("carrinho");
+  }, false)
+
+
 

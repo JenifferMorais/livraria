@@ -78,7 +78,7 @@
             <div>
               <c:if test="${nomeUsuario != null}">
                 <ul>
-                  <li><a id="sair" href="/projetoweb/usuario/logoff">Sair</a></li>
+                  <li><a class="sair" href="/projetoweb/usuario/logoff">Sair</a></li>
                 </ul>
               </c:if>
               <c:if test="${nomeUsuario == null}">
@@ -211,6 +211,9 @@
 	  carregarTabela();
   }, false)
   
+  
+
+
   
 </script>
 </body>

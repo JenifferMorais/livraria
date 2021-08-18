@@ -58,10 +58,19 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="/projetoweb/usuario/perfil"> <img src="/projetoweb/images/users/${imgUsuario}.jpg" alt="user-img" onerror="imgError(this);"
-                                width="36" class="img-circle"><b class="hidden-xs"><c:out value="${nomeUsuario}"/></b> </a>
-                    </li>
-                </ul>
-            </div>
+                                width="36" class="img-circle"><b class="hidden-xs"> <c:out
+									value="${nomeUsuario}" /></b>
+					</a>
+						<div class="menu-body">
+							<div>
+								<ul>
+									<li><a class="sair" href="/projetoweb/usuario/logoff">Sair</a></li>
+								</ul>
+							</div>
+						</div></li>
+				</ul>
+			</div>
+            
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
             <!-- /.navbar-static-side -->

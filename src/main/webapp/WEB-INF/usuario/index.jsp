@@ -68,7 +68,7 @@ function imgError(image) {
 					</a>
 						<div class="menu-body">
 							<div>
-								<ul><li><a href="/projetoweb/usuario/logoff">Sair</a></li></ul>
+								<ul><li><a class="sair" href="/projetoweb/usuario/logoff">Sair</a></li></ul>
 							</div>
 						</div></li>
 		</ul>

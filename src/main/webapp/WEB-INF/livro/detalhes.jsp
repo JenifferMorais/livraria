@@ -82,7 +82,7 @@
           <div class="menu-body">
             <div>
               <ul>
-                <li><a href="/projetoweb/usuario/logoff">Sair</a></li>
+                <li><a class="sair" href="/projetoweb/usuario/logoff">Sair</a></li>
               </ul>
             </div>
           </div>
