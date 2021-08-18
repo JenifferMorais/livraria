@@ -15,9 +15,9 @@ public class Conexao {
 			dataSource.setUsername("postgres");
 			dataSource.setPassword("admin123");
 			dataSource.setUrl("jdbc:postgresql://localhost:5432/projetoweb");
-			dataSource.setInitialSize(50);
-			dataSource.setMaxIdle(100);
-			dataSource.setMaxTotal(1000);
+			dataSource.setInitialSize(5);
+			dataSource.setMaxIdle(3);
+			dataSource.setMaxTotal(25);
 			dataSource.setMaxWaitMillis(5000);
 		}
 		return dataSource;
