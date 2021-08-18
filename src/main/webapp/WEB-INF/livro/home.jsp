@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
+<meta charset="UTF-8">
 <title>MyBooks</title>
 <link rel="canonical"
 	href="https://www.wrappixel.com/templates/myadmin-lite/" />
@@ -199,9 +199,7 @@ function user(image) {
 	<script src="/projetoweb/js/myadmin.js"></script>
 	<script src="/projetoweb/js/function.js"></script>
 	
-	<scrip>
 	
-	</scrip>
 </body>
 
 </html>

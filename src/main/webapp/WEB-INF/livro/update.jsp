@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
+<meta charset="UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -221,6 +221,7 @@ function user(image) {
 <script src="/projetoweb/js/waves.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="/projetoweb/js/myadmin.js"></script>
+
 </body>
 
 </html>

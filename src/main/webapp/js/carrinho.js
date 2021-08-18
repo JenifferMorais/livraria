@@ -3,7 +3,9 @@ let carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
 async function addCarrinho(id, nome) {
 	const findLivro = carrinho.find(item => item.id == id);
 	if (!findLivro) {
+		alert("Produto adicionado!");
 		carrinho.push({ id, quantidade: 1, nome });
+		alert("Produto adicionado!");
 	} else {
 		alert("Item já adicionado ao carrinho! \nA modificação da quantidade está disponível no carrinho.")
 	}

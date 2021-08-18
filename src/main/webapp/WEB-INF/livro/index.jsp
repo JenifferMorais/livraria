@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+<meta charset="UTF-8">
 <head>
 
 <title>MyBooks</title>
@@ -25,13 +25,6 @@
 <link href="/projetoweb/css/style.min.css" rel="stylesheet">
 <link href="/projetoweb/css/complement.css" rel="stylesheet">
 
-<script>
-function imgError(image) {
-    image.onerror = "";
-    image.src = "/projetoweb/images/users/usuario.png";
-    return true;
-}
-</script>
 
 
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +35,13 @@ function imgError(image) {
 
 </head>
 
-
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/projetoweb/images/users/usuario.png";
+    return true;
+}
+</script>
 
 <body>
 	<!-- Preloader -->
@@ -213,6 +212,8 @@ function imgError(image) {
 	<!-- Custom Theme JavaScript -->
 	<script src="/projetoweb/js/myadmin.js"></script>
 	<script src="/projetoweb/js/function.js"></script>
+	
+
 </body>
 
 </html>
