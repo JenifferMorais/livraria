@@ -4,17 +4,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>MyBooks</title>
 <link rel="canonical"
 	href="https://www.wrappixel.com/templates/myadmin-lite/" />
-=======
 	<meta charset="utf-8">
 	<title>MyBooks</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/myadmin-lite/" />
-
->>>>>>> 6d98a34ae4eb55a4e1fcec53d32b755257a87fa5
 
 	<link rel="icon" type="image/png" sizes="16x16" href="/projetoweb/images/favicon.png">
 
