@@ -42,13 +42,4 @@ async function diminuir(id) {
 	}
 };
 
-<button id="but" onclick="return confirm('Deseja confirmar compra?');" class="btn btn-success noDisplay" type="submit">Comprar</button>
-
-async function limpar(){
-
-
-}
-
-
-
 

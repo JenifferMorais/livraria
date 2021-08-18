@@ -78,7 +78,7 @@
             <div>
               <c:if test="${nomeUsuario != null}">
                 <ul>
-                  <li><a href="/projetoweb/usuario/logoff">Sair</a></li>
+                  <li><a id="sair" href="/projetoweb/usuario/logoff">Sair</a></li>
                 </ul>
               </c:if>
               <c:if test="${nomeUsuario == null}">
@@ -203,6 +203,15 @@
   }
 
   window.addEventListener('load', carregarTabela, false);
+  
+  let dtn = document.querySelector("button#but");
+  dtn.addEventListener('click', function(){
+	  carrinho = []
+	  localStorage.removeItem("carrinho");
+	  carregarTabela();
+  }, false)
+  
+  
 </script>
 </body>
 
