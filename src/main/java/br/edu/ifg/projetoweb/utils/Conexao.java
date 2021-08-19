@@ -22,7 +22,7 @@ public class Conexao {
 		}
 		return dataSource;
 	}
-	
+
 	public static Connection getConnection() throws SQLException{
 		return getDataSource().getConnection();
 	}

@@ -119,7 +119,7 @@
         </c:if>
       </ul>
       <div class="center p-20">
-					<span class="hide-menu"><a href="/projetoweb/livros/carrinho" 
+					<span class="hide-menu"><a href="/projetoweb/livros/carrinho"
                                      class="btn btn-info btn-block btn-rounded waves-effect waves-light">Carrinho</a></span>
       </div>
     </div>
@@ -186,7 +186,7 @@
                 <div class="col-sm-12">
                   <br>
                   <a class="btn btn-success" href="/projetoweb/livros/home"
-                     onClick="addCarrinho('${livro.id}','${livro.nome}')">Adicionar
+                     onClick="carrinho.addCarrinho('${livro.id}','${livro.nome}')">Adicionar
                     ao carrinho!</a>
                 </div>
               </div>
