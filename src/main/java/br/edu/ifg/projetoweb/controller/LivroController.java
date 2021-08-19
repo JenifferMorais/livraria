@@ -128,7 +128,7 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setDescricao(request.getParameter("descricao"));
 		livro.setValor(Double.parseDouble(formataDados(request.getParameter("valor"))));
 		livro.setISBN(request.getParameter("isbn"));
-		livro.setQuantidade(Integer.parseInt(formataQuant(request.getParameter("quantidade"))));
+		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 		livro.setImagem(request.getParameter("imagem"));
 		livroDAO.alterarLivro(livro);
 		livroDAO.alterarEstoque(livro);
@@ -182,7 +182,7 @@ public class LivroController extends ProjectHttpServlet {
 		livro.setDescricao(request.getParameter("descricao"));
 		livro.setValor(Double.parseDouble(formataDados(request.getParameter("valor"))));
 		livro.setISBN(request.getParameter("isbn"));
-		livro.setQuantidade(Integer.parseInt(formataQuant(request.getParameter("quantidade"))));
+		livro.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 		livro.setImagem(request.getParameter("imagem"));
 
 		try {
@@ -200,10 +200,5 @@ public class LivroController extends ProjectHttpServlet {
 		   return dado;
 		}
 	
-	public static String formataQuant(String dado){
-		   dado = dado.replace(",","0");
-		   dado = dado.replace(".","0");
-		   dado = dado.replace(" ","0");
-		   return dado;
-		}
+	
 }
